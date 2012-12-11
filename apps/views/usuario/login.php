@@ -9,11 +9,11 @@ if (preg_match ( "/^$realUrl\/.*/", $uri ) === 0) {
 <div class="wrapper clearfix">
 
 	<header class="cont-cab mbl">
-		<h1>Entrar en Lovende</h1>
+		<h1><?=traducir ( "Entrar en Lovende" )?></h1>
 		<p>
-			¿Todavía no estás registrado? <a
+			<?=traducir ( "¿Todavía no estás registrado?" )?> <a
 				href="register<?=(isset($urlBack)?"/$urlBack":"")?>"
-				title="registrate en Lovende">Regístrate</a>
+				title="<?=traducir ( "registrate en Lovende" )?>"><?=traducir ( "Regístrate" )?></a>
 		</p>
 	</header>
 
@@ -24,27 +24,28 @@ if (preg_match ( "/^$realUrl\/.*/", $uri ) === 0) {
 			value="<?=isset($urlBack)?$urlBack."==":""?>" /> <span
 			class="errorTxt"><?=isset($error)?$error:"" ?></span>
 		<p>
-			<label for="">Seudónimo (nombre con el que se te identifica en
-				Lovende)</label> <input type="text"
+			<label for=""><?=traducir ( "Seudónimo (nombre con el que se te identifica en
+				Lovende)" )?></label> <input type="text"
 				class="texto w225 required seudonimo"
-				data-error-required="Añade el seudónimo."
+				data-error-required="<?=traducir ( "Añade el seudónimo." )?>"
 				name="seudonimo" value="<?=set_value("seudonimo"); ?>" /> <span
 				class="errorTxt"><?=isset($errorSeudonimo)?$errorSeudonimo:"" ?></span> <?=form_error("seudonimo")?>
 			</p>
 		<p>
-			<label for="">Contraseña actual <span class="dark-grey">|</span> <a
-				href="forgot" title="Recordar contraseña">¿Olvidaste tu contraseña?</a></label>
+			<label for=""><?=traducir ( "Contraseña actual" )?> <span
+				class="dark-grey">|</span> <a href="forgot"
+				title="<?=traducir ( "Recordar contraseña" )?>"><?=traducir ( "¿Olvidaste tu contraseña?" )?></a></label>
 			<input type="password" class="texto w225 required" name="password"
-				data-error-required="Añade la contraseña." /> <span
+				data-error-required="<?=traducir ( "Añade la contraseña." )?>" /> <span
 				class="errorTxt"><?=isset($errorPassword)?$errorPassword:"" ?></span> <?=form_error("password")?>
 			</p>
 		<p>
-			<input type="checkbox" name="recuerdame" /> Recordarme
+			<input type="checkbox" name="recuerdame" /> <?=traducir ( "Recordarme" )?>
 		</p>
 		<div class="ver-mas">
 			<div class="clearfix registro-dual">
-				<input type="submit" value="Entrar" class="bt" name="login" /> <span
-					class="o">o</span>
+				<input type="submit" value="<?=traducir ( "Entrar" )?>" class="bt"
+					name="login" /> <span class="o"><?=traducir ( "o" )?></span>
 				<?php $this->load->view("usuario/facebook_login")?>
 			</div>
 		</div>

@@ -31,7 +31,7 @@ if (trim ( $orden ) === "" && $profile) {
 					"mas-bajo" => traducir ( "Precio más bajo" ) 
 			);
 			?>
-				<label>Ordenar por</label> <select class="texto"
+				<label><?=traducir ( "Ordenar por" )?></label> <select class="texto"
 					onchange="cambiarOrdenBusqueda.call(this);"><?php
 					foreach ( $lista as $k => $v ) {
 						?><option value="<?=$k?>"
@@ -49,14 +49,14 @@ if (trim ( $orden ) === "" && $profile) {
 			} else {
 				$listaUbicacion = array (
 						"A" => traducir ( "Todo el mundo" ),
-						"P-ESP" => "España",
-						"C-Europe" => "Europa" 
+						"P-ESP" =>traducir ( "España"),
+						"C-Europe" => traducir ( "Europa" ) 
 				);
 			}
 			?>
 			<?php if(!$profile){?>
 			<p class="apaisado">
-				<label>Ubicación</label> <select class="texto"
+				<label><?=traducir ( "Ubicación" )?></label> <select class="texto"
 					onchange="cambiarUbicacionBusqueda.call(this)">
 				<?php
 				foreach ( $listaUbicacion as $k => $v ) {

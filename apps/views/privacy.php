@@ -1,19 +1,18 @@
 <div class="wrapper clearfix">
 	<header class="cont-cab">
-		<h1>Privacidad</h1>
+		<h1><?=traducir ( "Privacidad" )?></h1>
 		<p>
-			<a href="benefit">¿Por qué Lovende?</a> | <a href="fees">Tarifas de
-				venta</a> | <a href="terms">Términos de uso</a> | Privacidad</a>
+			<a href="benefit"><?=traducir ( "¿Por qué Lovende?" )?></a> | <a href="fees"><?=traducir ( "Tarifas de
+				venta" )?></a> | <a href="terms"><?=traducir ( "Términos de uso" )?></a> | <?=traducir ( "Privacidad" )?></a>
 		</p>
 	</header>
 
-	<div class="post">
-		<p>
+	<div class=\"post\"><?=traducir ( \"<p>
 			<strong>Información legal</strong> <br> Este sitio web está
 			gestionado por Romuald Fons Rojas, titular del dominio
 			http://www.lovende.es/, de nacionalidad española con domicilio
 			social en C/ Tramuntana 29 Bajos, DNI 43539353-P <br> Formulario
-			de contacto: <a href="home/modal/enviar-mail/mail/2" class="nmodal">Link</a>
+			de contacto: <a href=\"home/modal/enviar-mail/mail/2\" class=\"nmodal\">Link</a>
 		</p>
 		<br>
 		<p>
@@ -77,7 +76,7 @@
 			fotocopia del Documento Nacional de Identidad o Pasaporte, y petición
 			en que se concreta la solicitud. <br> En caso de duda respecto a
 			nuestra política de privacidad de datos, el usuario puede ponerse en
-			contacto con nosotros vía formulario a través de <a href=" #">Link</a>
+			contacto con nosotros vía formulario a través de <a href=\" #\">Link</a>
 		</p>
 		<br>
 		<p>
@@ -126,7 +125,8 @@
 			Lovende se reserva la rescisión de los servicios que realiza, en
 			aquellos usuarios que no cumplan con los términos y condiciones
 			legales de uso, así como con la legislación vigente.
-		</p>
+		</p>\" )?>
+		
 
 
 

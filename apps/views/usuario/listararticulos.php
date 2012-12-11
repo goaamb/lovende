@@ -41,8 +41,8 @@ $pagSig = isset ( $pagSig ) ? $pagSig : 2;
 			}
 		}
 		?>
-			<?=$total?> artículos, mostrando del <strong><?=count($articulos)>0?$inicio:0;?></strong>
-			al <strong id="contadorFinal"><?=($inicio+count($articulos)-1)?></strong>
+			<?=$total?> <?=traducir ( "artículos, mostrando del" )?> <strong><?=count($articulos)>0?$inicio:0;?></strong>
+			<?=traducir ( "al" )?> <strong id="contadorFinal"><?=($inicio+count($articulos)-1)?></strong>
 		</p>
 	</header><?php
 	if (isset ( $articulos ) && is_array ( $articulos ) && count ( $articulos ) > 0) {

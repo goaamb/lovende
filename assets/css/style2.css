@@ -1,0 +1,348 @@
+@CHARSET "ISO-8859-1";
+
+.OwnTextBoxNoData {
+	color: #999 !important;
+}
+
+ul.listabenefit {
+	padding-left: 15px;
+	list-style-type: disc;
+}
+
+ul.listaNivel2 {
+	padding-left: 5px;
+}
+
+ul.listaNivel2 li:first-child {
+	margin-top: 5px;
+}
+
+ul.listaNivel3 {
+	padding-left: 20px;
+}
+
+ul.listaNivel1 a.parent {
+	font-weight: bold;
+}
+
+.label-on-field {
+	position: relative;
+}
+
+.label-on-field .resetBusqueda {
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	width: 31px;
+	height: 31px;
+	text-align: center;
+	line-height: 31px;
+	cursor: pointer;
+	font-weight: bold;
+	background: #E5E5E5;
+	border-radius: 4px;
+	display: none;
+}
+
+.label-on-field .resetBusqueda:hover {
+	font-size: 1.2em;
+}
+
+header.header .search-box .texto {
+	width: 405px;
+	padding-right: 35px;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.result-list .meta .grey {
+	font-size: 15px;
+}
+
+.td-imagen {
+	height: 60px;
+	width: 60px;
+	text-align: right;
+}
+
+.ventasSeparador {
+	height: 35px;
+	width: 100%;
+}
+
+.orderby {
+	cursor: pointer;
+}
+
+.orderby:hover {
+	text-decoration: underline;
+}
+
+.orderby.select {
+	text-decoration: underline;
+	padding-right: 18px;
+}
+
+.orderby.select.asc {
+	background: transparent url("../images/ico/ico-asc.gif") no-repeat right
+		center scroll;
+}
+
+.orderby.select.desc {
+	background: transparent url("../images/ico/ico-desc.gif") no-repeat
+		right center scroll;
+}
+
+.pln.orderby.select.desc,.pln.orderby.select.asc {
+	background-position: left center;
+	padding-left: 18px !important;
+	padding-right: 5px;
+}
+
+.content .main-col {
+	border-left: none;
+	padding-left: 16px;
+	background: transparent url("../images/html/dotted.gif") repeat-y left
+		top scroll;
+}
+
+.line-category .cat {
+	display: block;
+}
+
+.fleft {
+	float: left;
+	margin-right: 10px;
+	margin-top: 20px;
+}
+
+form .line .fleft label {
+	margin-bottom: 10px;
+}
+
+#precio-cantidad-box .durac,#destino-envios .durac {
+	width: 237px;
+	float: left;
+	margin-top: 5px;
+}
+
+#destino-envios .durac {
+	margin-top: 0px;
+	margin-bottom: 9px;
+}
+
+.formA #destino-envios span.EUR {
+	padding-top: 6px;
+}
+
+#precio-cantidad-box .durac label,#destino-envios .durac label {
+	padding-top: 7px;
+	display: block;
+	float: left;
+}
+
+#precio-cantidad-box .durac input.texto,#destino-envios .durac input.texto
+	{
+	float: right;
+	text-align: right;
+	width: 120px;
+}
+
+table .t201 {
+	width: 191px;
+}
+
+.formA .line#uploader1 {
+	margin-bottom: 30px;
+}
+
+.w30 {
+	width: 30px;
+}
+
+.formA .input {
+	border: none;
+	font-size: 1em;
+	width: 630px;
+	padding: 5px;
+	display: inline-block;
+}
+
+.formA .textarea {
+	border: 1px solid #ABADB3;
+	font-size: 1em;
+	width: 640px;
+	padding: 5px;
+	font-family: Arial, Helvetica, sans-serif;
+	resize: vertical;
+	min-height: 85px;
+}
+
+.formA .con-moneda .input {
+	width: 200px;
+}
+
+.meta .oferta {
+	font-size: 0.8em;
+	font-style: italic;
+}
+
+.result-list div.border,table tr.border td {
+	border-bottom: 1px dotted #A93029;
+}
+
+.result-list div.border {
+	padding-bottom: 15px;
+	margin-bottom: 0px;
+}
+
+.formA .wp80 {
+	width: 80%;
+}
+
+.formA .tar {
+	text-align: right;
+}
+
+#popUp select[name='motivo'] {
+	font-size: 15px;
+}
+
+.formA span.numero {
+	font-size: 30px;
+}
+
+.formA div.opciones label {
+	margin-bottom: 0px;
+}
+
+.formA span.EUR {
+	padding-left: 5px;
+	padding-top: 10px;
+	display: inline-block;
+}
+
+.formA div.dinero .con-moneda input[type="text"] {
+	width: 215px;
+}
+
+.w650 {
+	width: 650px;
+}
+
+.pt13 {
+	padding-top: 13px;
+}
+
+.mrg0 {
+	margin: 0px !important;
+}
+
+.col110 {
+	display: inline-block;
+	width: 110px;
+}
+
+.col60 {
+	display: inline-block;
+	width: 60px;
+}
+
+.w3em {
+	width: 3em;
+}
+
+.mr10 {
+	margin-right: 10px;
+}
+
+#popUp .formA .errorTxt {
+	color: red;
+	display: inline-block;
+}
+
+table th.no-border {
+	border: none;
+}
+
+ul.list-dot {
+	list-style: disc inside;
+}
+
+span.baneado,a.baneado {
+	text-decoration: line-through;
+}
+
+p.no-existe {
+	text-align: center;
+	padding: 25px;
+}
+
+.section404 {
+	padding: 0 10px;
+}
+
+ul.columna {
+	font-size: 15px;
+	float: left;
+	width: 251px;
+	line-height: 1.5em;
+}
+
+form#formPaypalPago.error {
+	padding: 10px;
+	text-align: center;
+}
+
+.errorTxt {
+	color: red;
+	vertical-align: top;
+}
+
+.formA .recuadro {
+	display: inline-block;
+}
+
+.formA #formNewsletter .tipo-precio-box {
+	display: inline-block;
+}
+
+.t201:hover {
+	text-decoration: underline;
+}
+
+.comments-list li.thread .user-comment p {
+	margin-bottom: 5px;
+	overflow: hidden;
+}
+
+table tr.bg-red th,table tr.bg-red td {
+	background: #F9EAE3;
+}
+
+.showMiperfil {
+	display: inline-block;
+}
+
+ul.ver-mas {
+	list-style: none;
+	margin: 0px;
+	padding: 20px 0 0;
+}
+
+ul.ver-mas li {
+	display: inline-block;
+}
+
+ul.ver-mas li a,ul.ver-mas li span {
+	display: inline-block;
+	font-size: 1.1em;
+	font-weight: bold;
+	padding: 0px 10px;
+}
+
+ul.ver-mas li span {
+	color: #CCC;
+}

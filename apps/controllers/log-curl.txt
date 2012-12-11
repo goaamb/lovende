@@ -1,0 +1,440 @@
+[2012-07-03 10:09:05]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 10:08:39]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 08:22:39]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 08:20:42]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => EUR 25.00
+        )
+
+    [payment_request_date] => Tue Jul 03 07:00:01 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal/success?codigo=1648861526
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => A.5Rgdid3o0wN4fda5DR19zdnt9lAFy207yNj5Idod-TdZm8qBE114y4
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-1XX97738N5803011G
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 08:20:15]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 08:19:50]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 08:17:21]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => EUR 25.00
+        )
+
+    [payment_request_date] => Tue Jul 03 07:05:09 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal/success?codigo=1840383735
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => AQesK6wO6PloFA.Syi8dCdA43RsPA4APuuvtqfT9xRQXsBI9U5HPX3lD
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-8529092508313474G
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 08:13:34]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => EUR 25.00
+        )
+
+    [payment_request_date] => Tue Jul 03 06:37:13 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal?codigo=851411579
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => ACW0GJnfKtA.IxHQlyNyOg.22y9XA8Gl.mA-gXsRXoYwlK1NcZMdIJcL
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-4A1340054M8172705
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 08:05:08]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 08:04:54]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 08:00:00]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 07:59:57]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 07:59:27]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => USD 25.00
+        )
+
+    [payment_request_date] => Mon Jul 02 17:44:45 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => AivmupTsVyxjVM5SY.7tbkjdSw2RASFqRR59r3lqYKiCjQkbtN6b4.Ma
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-8YR76190N4400252T
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 07:59:15]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => USD 25.00
+        )
+
+    [payment_request_date] => Mon Jul 02 17:42:56 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => A6poT8cPcOzB.nvB9SdlIyFmEhXQAGOqSkgtl9jE6Wv256ZfgugvYgDK
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-2J4594805E5098438
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 07:57:39]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => USD 25.00
+        )
+
+    [payment_request_date] => Tue Jul 03 06:02:50 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal?codigo=1784335021
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => An5ns1Kso7MWUdW4ErQKJJJ4qi4-AmwER4Ooqm9Kms2KIpmzpNt71T92
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-06288798RM524184C
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 07:43:32]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => USD 25.00
+        )
+
+    [payment_request_date] => Mon Jul 02 18:26:46 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal?codigo=1390372925
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => ABRHmHdk.NgOoIun93ie6ZtkCDLyAZUGc2ImXqWn8viAuxoTvIvqp0xL
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-5GS68026VD639745C
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 07:43:05]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => USD 25.00
+        )
+
+    [payment_request_date] => Mon Jul 02 17:55:48 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => AFcWxV21C7fd0v3bYYYRCpSSRl31AAVkBNB94FURDLFTbnHRB8QYwrBD
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-11T22036JE0099324
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 07:43:04]
+Array
+(
+    [transaction] => Array
+        (
+            [0] => USD 25.00
+        )
+
+    [payment_request_date] => Mon Jul 02 18:19:16 PDT 2012
+    [return_url] => http://sandbox.lovende.nakoko.com/paypal?codigo=1909640871
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://sandbox.lovende.nakoko.com/paypal
+    [sender_email] => goaamb_1263400097_per@gmail.com
+    [verify_sign] => AFcWxV21C7fd0v3bYYYRCpSSRl31Apdw4WSuoqjlpM6WqhEMhtbXurES
+    [test_ipn] => 1
+    [cancel_url] => http://sandbox.lovende.nakoko.com/paypal
+    [pay_key] => AP-4SY68042HL254545Y
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+[2012-07-03 07:37:51]
+Array
+(
+    [execution] => e2s2
+    [autoredirectondone] => false
+    [_eventId_submit] => Close
+    [flow_name] => 
+    [fso_enabled] => 11
+)
+Array
+(
+    [codigo] => 851411579
+)
+[2012-07-03 07:37:09]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 07:36:05]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 07:32:21]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 07:31:19]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-03 07:03:25]
+Array
+(
+)
+Array
+(
+    [codigo] => 1784335021
+)
+[2012-07-02 19:29:42]
+Array
+(
+    [execution] => e2s2
+    [autoredirectondone] => false
+    [_eventId_submit] => Close
+    [flow_name] => 
+    [fso_enabled] => 11
+)
+Array
+(
+    [codigo] => 1390372925
+)
+[2012-07-02 19:26:42]
+Array
+(
+    [execution] => e2s2
+    [autoredirectondone] => false
+    [_eventId_submit] => Close
+    [flow_name] => 
+    [fso_enabled] => 11
+)
+Array
+(
+    [codigo] => 1909640871
+)
+[2012-07-02 19:25:58]
+Array
+(
+    [execution] => e2s2
+    [autoredirectondone] => false
+    [_eventId_submit] => Close
+    [flow_name] => 
+    [fso_enabled] => 11
+)
+Array
+(
+    [codigo] => 1909640871
+)
+[2012-07-02 19:17:19]
+Array
+(
+    [execution] => e2s2
+    [autoredirectondone] => false
+    [_eventId_submit] => Close
+    [flow_name] => 
+    [fso_enabled] => 11
+)
+Array
+(
+)
+[2012-07-02 18:56:52]
+Array
+(
+    [execution] => e2s2
+    [autoredirectondone] => false
+    [_eventId_submit] => Close
+    [flow_name] => 
+    [fso_enabled] => 11
+)
+Array
+(
+)

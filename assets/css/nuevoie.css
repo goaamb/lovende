@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+.clearfix:after {
+	height: auto;
+}
+
+.clearfix {
+	display: block;
+}
+
+.uploader .sombra {
+	position: absolute;
+	right: -2px;
+	top: 1px;
+	border-right: 1px solid gray;
+	border-bottom: 1px solid gray;
+	z-index: 0;
+}
+
+.disabled .sombra {
+	border: none;
+}

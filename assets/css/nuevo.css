@@ -1,0 +1,140 @@
+@CHARSET "ISO-8859-1";
+
+.formA .uploader {
+	padding: 5px 5px 5px;
+	width: 90px;
+	height: 90px;
+	background-image: url(../images/css/bg-uploader-mini-out.png);
+}
+
+.formA .uploader.disabled:hover {
+	background-image: url(../images/css/bg-uploader-mini-out.png);
+}
+
+.formA .uploader.portada {
+	background: url(../images/css/bg-uploader-out.png) white center 25px
+		no-repeat scroll;
+}
+
+.formA .uploader:hover {
+	background-image: url(../images/css/bg-uploader-mini.png);
+}
+
+.formA .uploader.portada:hover {
+	background-image: url(../images/css/bg-uploader.png);
+}
+
+.formA .uploader:hover {
+	box-shadow: 1px 1px 1px gray;
+}
+
+.formA .uploader.disabled:hover {
+	box-shadow: none;
+}
+
+.formA .uploader.hidden {
+	display: none;
+}
+
+.formA .uploader.loading {
+	background: transparent url("../images/html/progress_bar.gif") center
+		center no-repeat;
+}
+
+.formA .uploader input[type="file"] {
+	opacity: 0;
+	filter: alpha(opacity =       0);
+}
+
+.uploaded .cerrar {
+	position: absolute;
+	right: 5px;
+	top: 5px;
+	width: 15px;
+	height: 15px;
+	background: transparent url(../images/ico/close-rounded.gif) center
+		center no-repeat;
+	display: none;
+	z-index: 4;
+}
+
+.uploaded:hover  .cerrar {
+	display: block;
+	opacity: 0.5;
+	filter: alpha(opacity =       50);
+}
+
+.uploaded:hover .cerrar:hover {
+	opacity: 1;
+	filter: alpha(opacity =       100);
+	cursor: pointer;
+}
+
+.errorTxt {
+	color: red;
+}
+
+.uploader .block {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 100px;
+	z-index: 3;
+}
+
+.uploader.disabled .block {
+	display: block;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100px;
+	height: 100px;
+	z-index: 2;
+	background-color: white;
+	opacity: 0.7;
+	filter: alpha(opacity =       70);
+}
+
+.formA .errorTxt {
+	display: inline-block;
+}
+
+.formA .recuadro {
+	display: inline-block;
+}
+
+.formA .hidden {
+	display: none;
+}
+
+.spanTxt,.spanObj {
+	position: absolute;
+	width: 100px;
+	left: 0px;
+	top: 65px;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 13px;
+	text-align: center;
+	color: #035F8D;
+	z-index: 1;
+}
+
+.spanObj {
+	top: 0px;
+	height: 100px;
+	z-index: 2;
+}
+
+.uploader:hover .spanTxt {
+	text-decoration: underline;
+}
+
+.uploader.progress .spanTxt {
+	color: #333;
+}
+
+.uploader.disabled:hover .spanTxt,.uploader.progress:hover .spanTxt {
+	text-decoration: none;
+}

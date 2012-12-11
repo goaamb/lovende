@@ -1,0 +1,18 @@
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-width : 768px)
+and (max-width : 1024px) {
+
+	.wrapper {max-width: 960px;}
+	.content .main-col {width:684px}
+	.product-file .data {width: 300px;}
+	.product-file .data .countdown {font-size: 16px;}
+	.line-category {width: 200px;}
+	.consejos {width: 261px;}
+	.product-file .data dl dt {width:115px;}
+	.product-file .data dl dd {width: 185px;}
+	.product-file .data .formA .recuadro {width:150px}
+	.product-file .data .formA .recuadro input[type="text"] { width: 120px;}
+	.product-file .bt-blue {padding: 5px 16px;}
+	.product-file .gallery li {width: 641px;}
+}

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuracion>
+	<variables>
+		<imagen>
+			<articulo>
+				<minimaAlto>60</minimaAlto>
+				<minimaAncho>60</minimaAncho>
+			</articulo>
+		</imagen>
+		<ofertas>
+			<maximoCantidad>3</maximoCantidad>
+			<vencimiento>28</vencimiento>
+		</ofertas>
+		<subastas>
+			<minimoMonto>0.5</minimoMonto>
+		</subastas>
+		<metatags>
+			<defaultHeaderTitle>Lovende.es: Subastas, Comprar Nuevo y Segunda Mano Antiguedades y Coleccionismo.</defaultHeaderTitle>
+			<defaultHeaderDescription>Subastas y Segunda Mano en Lovende, Ofertas de Iphone, GPS, MP3, PDA, Ropa, Relojes, Móviles, Antigüedades. Comprar y Vender Xbox, PS3, Nintendo Wii.</defaultHeaderDescription>
+			<defaultHeaderKeywords>Lovende, subastas, segunda mano, comprar, coleccionismo, antigüedades, psp, ps3, wii, xbox 360, ordenadores, iphone, portatiles, camaras digitales, moviles, samsung, pda, gps, mp3, mp4, coches, motos, llantas, ropa, bolsos, deportes, gafas de sol, adidas, nike, videojuegos, bicicletas.</defaultHeaderKeywords>
+		</metatags>
+		<paginacion>
+			<cantidad>25</cantidad>
+			<cantidadVendidos>10</cantidadVendidos>
+		</paginacion>
+		<ubicacion>
+			<tipo>defecto</tipo>
+			<detalle><![CDATA[En esta seccion hay 2 tipos por: dominio y defecto]]></detalle>
+		</ubicacion>
+		<paypal>
+			<securityUserid>info_api1.lovende.com</securityUserid>
+			<securityPassword>HLMPFJDRD2U5JLCT</securityPassword>
+			<securitySignature>AFcWxV21C7fd0v3bYYYRCpSSRl31A000fOHHIpFBVuXCt482N4x.r-Cf</securitySignature>
+			<applicationId>APP-48A394139H7759244</applicationId>
+			<urlBase>https://www.paypal.com/</urlBase>
+			<urlBaseSVCS>https://svcs.paypal.com/</urlBaseSVCS>
+			<payAccount>info@lovende.com</payAccount>
+		</paypal>
+		<denuncias>
+			<d1a>10</d1a>
+			<d1b>10</d1b>
+			<d2a>5</d2a>
+			<d2b>5</d2b>
+			<d2c>15</d2c>
+			<d3a>5</d3a>
+			<d3b>5</d3b>
+			<d3b>15</d3b>
+			<d4a>5</d4a>
+			<d4b>5</d4b>
+			<d4c>15</d4c>
+			<d5a>5</d5a>
+			<d5b>5</d5b>
+			<d5c>15</d5c>
+		</denuncias>
+		<publicidad>
+			<valor>Si</valor>
+			<detalle><![CDATA[En esta seccion hay 2 tipos por: Si y No]]></detalle>
+		</publicidad>
+		<notificacion>
+			<seguimiento>24</seguimiento>
+		</notificacion>
+		<masivo>
+			<cantidad>50</cantidad>
+		</masivo>
+		<emailFrom>support@lovende.com</emailFrom>
+		<servicio>834406</servicio>
+		<maestra>bah6aika</maestra>
+	</variables>
+</configuracion>

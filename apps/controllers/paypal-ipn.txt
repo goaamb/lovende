@@ -1,0 +1,1463 @@
+[2012-12-01 06:19:51] - COMPLETO
+[2012-12-01 06:19:51]
+Array
+(
+    [transaction_subject] => Pago por factura: 9/2012 de Nobiembre/2012 en Lovende.com
+    [payment_date] => 05:19:46 Dec 01, 2012 PST
+    [txn_type] => web_accept
+    [last_name] => Guzmn Gonzlez
+    [residence_country] => ES
+    [item_name] => Pago por factura: 9/2012 de Nobiembre/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => info@lovende.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => A6.AkBJEx43ZIgZEP5EcT-uUm067AzOh2Yb92W5wu8HqjZREiHN.ITf8
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => lubu77@gmail.com
+    [txn_id] => 36W011051S756834N
+    [quantity] => 1
+    [receiver_email] => info@lovende.com
+    [first_name] => Marc
+    [payer_id] => EJ3HV3WKHS756
+    [receiver_id] => W8HCWU4RVBCK4
+    [item_number] => 9/2012
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.22
+    [shipping] => 0.00
+    [mc_gross] => 0.22
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.7
+    [ipn_track_id] => 112affecc204d
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/9] => 
+    [transaction_subject] => Pago por factura: 9/2012 de Nobiembre/2012 en Lovende.com
+    [payment_date] => 05:19:46 Dec 01, 2012 PST
+    [txn_type] => web_accept
+    [last_name] => Guzmán González
+    [residence_country] => ES
+    [item_name] => Pago por factura: 9/2012 de Nobiembre/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => info@lovende.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => A6.AkBJEx43ZIgZEP5EcT-uUm067AzOh2Yb92W5wu8HqjZREiHN.ITf8
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => lubu77@gmail.com
+    [txn_id] => 36W011051S756834N
+    [quantity] => 1
+    [receiver_email] => info@lovende.com
+    [first_name] => Marc
+    [payer_id] => EJ3HV3WKHS756
+    [receiver_id] => W8HCWU4RVBCK4
+    [item_number] => 9/2012
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.22
+    [shipping] => 0.00
+    [mc_gross] => 0.22
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.7
+    [ipn_track_id] => 112affecc204d
+)
+[2012-11-04 10:38:51] - COMPLETO
+[2012-11-04 10:38:51]
+Array
+(
+    [transaction_subject] => Pago por factura: 6/2012 de Octubre/2012 en Lovende.com
+    [payment_date] => 09:38:45 Nov 04, 2012 PST
+    [txn_type] => web_accept
+    [last_name] => Tarrela Gallego
+    [residence_country] => ES
+    [item_name] => Pago por factura: 6/2012 de Octubre/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => info@lovende.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => A6Fyo.RG2CmUHAdbJ1HeGZnSj3AWAMwM0TnpeXNKxLl2.0dNrv8ib1km
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => inaki.tarrela@ono.com
+    [txn_id] => 8N096177RA237831B
+    [quantity] => 1
+    [receiver_email] => info@lovende.com
+    [first_name] => Juan Ignacio
+    [payer_id] => TFZZ3BAZEYBPJ
+    [receiver_id] => W8HCWU4RVBCK4
+    [item_number] => 6/2012
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.40
+    [shipping] => 0.00
+    [mc_gross] => 1.43
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.7
+    [ipn_track_id] => d90f1ce6715cf
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/6] => 
+    [transaction_subject] => Pago por factura: 6/2012 de Octubre/2012 en Lovende.com
+    [payment_date] => 09:38:45 Nov 04, 2012 PST
+    [txn_type] => web_accept
+    [last_name] => Tarrela Gallego
+    [residence_country] => ES
+    [item_name] => Pago por factura: 6/2012 de Octubre/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => info@lovende.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => A6Fyo.RG2CmUHAdbJ1HeGZnSj3AWAMwM0TnpeXNKxLl2.0dNrv8ib1km
+    [payer_status] => verified
+    [tax] => 0.00
+    [payer_email] => inaki.tarrela@ono.com
+    [txn_id] => 8N096177RA237831B
+    [quantity] => 1
+    [receiver_email] => info@lovende.com
+    [first_name] => Juan Ignacio
+    [payer_id] => TFZZ3BAZEYBPJ
+    [receiver_id] => W8HCWU4RVBCK4
+    [item_number] => 6/2012
+    [handling_amount] => 0.00
+    [payment_status] => Completed
+    [payment_fee] => 
+    [mc_fee] => 0.40
+    [shipping] => 0.00
+    [mc_gross] => 1.43
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.7
+    [ipn_track_id] => d90f1ce6715cf
+)
+[2012-11-01 13:29:10] - COMPLETO
+[2012-11-01 13:29:10]
+Array
+(
+    [mc_gross] => 3.87
+    [protection_eligibility] => Ineligible
+    [payer_id] => FFPGH74Q7HXKC
+    [tax] => 0.00
+    [payment_date] => 12:29:05 Nov 01, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => aurelio
+    [mc_fee] => 0.48
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => AFJop6ozTT3aGePviQ6KU2oEtnLNAInUU0P1NipXZYZhPXZJlUvTqrxL
+    [payer_email] => info@salvatierra12.com
+    [txn_id] => 2XK60287S2297683H
+    [payment_type] => instant
+    [payer_business_name] => DISTRIBUIDOR  OFICIAL  ROSACE  EUROPA
+    [last_name] => salvatierra lopez
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 5/2012 de Octubre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 5/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 5/2012 de Octubre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => df8764a4741f
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/5] => 
+    [mc_gross] => 3.87
+    [protection_eligibility] => Ineligible
+    [payer_id] => FFPGH74Q7HXKC
+    [tax] => 0.00
+    [payment_date] => 12:29:05 Nov 01, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => aurelio
+    [mc_fee] => 0.48
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => AFJop6ozTT3aGePviQ6KU2oEtnLNAInUU0P1NipXZYZhPXZJlUvTqrxL
+    [payer_email] => info@salvatierra12.com
+    [txn_id] => 2XK60287S2297683H
+    [payment_type] => instant
+    [payer_business_name] => DISTRIBUIDOR  OFICIAL  ROSACE  EUROPA
+    [last_name] => salvatierra lopez
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 5/2012 de Octubre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 5/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 5/2012 de Octubre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => df8764a4741f
+)
+[2012-10-05 00:22:49] - COMPLETO
+[2012-10-05 00:22:49]
+Array
+(
+    [mc_gross] => 2.61
+    [protection_eligibility] => Ineligible
+    [payer_id] => FFPGH74Q7HXKC
+    [tax] => 0.00
+    [payment_date] => 23:22:47 Oct 04, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => aurelio
+    [mc_fee] => 0.44
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => AeTk7wkriKYhzaMPsS2wC2Gq.rhgAl8BYFo2yshnp0uuT0IYeAACohu0
+    [payer_email] => info@salvatierra12.com
+    [txn_id] => 4SG86402JB7108115
+    [payment_type] => instant
+    [payer_business_name] => DISTRIBUIDOR  OFICIAL  ROSACE  EUROPA
+    [last_name] => salvatierra lopez
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 4/2012 de Septiembre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 4/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 4/2012 de Septiembre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => b9242f82d8a34
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/4] => 
+    [mc_gross] => 2.61
+    [protection_eligibility] => Ineligible
+    [payer_id] => FFPGH74Q7HXKC
+    [tax] => 0.00
+    [payment_date] => 23:22:47 Oct 04, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => aurelio
+    [mc_fee] => 0.44
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => AeTk7wkriKYhzaMPsS2wC2Gq.rhgAl8BYFo2yshnp0uuT0IYeAACohu0
+    [payer_email] => info@salvatierra12.com
+    [txn_id] => 4SG86402JB7108115
+    [payment_type] => instant
+    [payer_business_name] => DISTRIBUIDOR  OFICIAL  ROSACE  EUROPA
+    [last_name] => salvatierra lopez
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 4/2012 de Septiembre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 4/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 4/2012 de Septiembre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => b9242f82d8a34
+)
+[2012-10-02 12:06:56] - COMPLETO
+[2012-10-02 12:06:56]
+Array
+(
+    [mc_gross] => 0.75
+    [protection_eligibility] => Ineligible
+    [payer_id] => 6NERPTDBJDYYE
+    [tax] => 0.00
+    [payment_date] => 11:06:49 Oct 02, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Dolores
+    [mc_fee] => 0.38
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => ApXHR0iZlx6L5Hvt5xzXEaEj-ElnAuMeDQnIVFPveYgo5xptfIe-QDb5
+    [payer_email] => ebay@baraboats.com
+    [txn_id] => 2AJ67961220961845
+    [payment_type] => instant
+    [payer_business_name] => Bara Boats, S. L.
+    [last_name] => Reyes Casado
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 3/2012 de Septiembre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 3/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 3/2012 de Septiembre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 562abd213c629
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/3] => 
+    [mc_gross] => 0.75
+    [protection_eligibility] => Ineligible
+    [payer_id] => 6NERPTDBJDYYE
+    [tax] => 0.00
+    [payment_date] => 11:06:49 Oct 02, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Dolores
+    [mc_fee] => 0.38
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => ApXHR0iZlx6L5Hvt5xzXEaEj-ElnAuMeDQnIVFPveYgo5xptfIe-QDb5
+    [payer_email] => ebay@baraboats.com
+    [txn_id] => 2AJ67961220961845
+    [payment_type] => instant
+    [payer_business_name] => Bara Boats, S. L.
+    [last_name] => Reyes Casado
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 3/2012 de Septiembre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 3/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 3/2012 de Septiembre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 562abd213c629
+)
+[2012-07-12 10:11:26] - DENIED
+[2012-07-12 10:11:26]
+Array
+(
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 09:07:28 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => Aoha00leLeg5TEt89Em-c8-624sMAX1TzQygJZ8KTi1PUC-ITJkYrytx
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0BS04895HY278540D
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Denied
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => eda766bcac911
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 09:07:28 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => Aoha00leLeg5TEt89Em-c8-624sMAX1TzQygJZ8KTi1PUC-ITJkYrytx
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0BS04895HY278540D
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Denied
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => eda766bcac911
+)
+[2012-07-12 10:07:32] - PENDIENTE
+[2012-07-12 10:07:32]
+Array
+(
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 09:07:28 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AFcWxV21C7fd0v3bYYYRCpSSRl31A8lZG0FuPCz7h7fto6G85qJPmGZw
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0BS04895HY278540D
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 661f400a60295
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 09:07:28 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AFcWxV21C7fd0v3bYYYRCpSSRl31A8lZG0FuPCz7h7fto6G85qJPmGZw
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0BS04895HY278540D
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 661f400a60295
+)
+[2012-07-12 10:01:18] - COMPLETO
+[2012-07-12 10:01:18]
+Array
+(
+    [mc_gross] => 60.65
+    [settle_amount] => 77.78
+    [protection_eligibility] => Ineligible
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [payment_date] => 08:51:41 Jul 12, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Alvaro Justo
+    [mc_fee] => 2.11
+    [exchange_rate] => 1.32866
+    [notify_version] => 3.5
+    [custom] => 
+    [settle_currency] => USD
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [quantity] => 1
+    [verify_sign] => A.ZfdZxEz6jhrSKiOFGtNK.yX8TCAyIAJlciSCdbKN53q32g2ZhiWaon
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 88S07218PP893410K
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [payment_fee] => 
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 62e5be7f1433
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [mc_gross] => 60.65
+    [settle_amount] => 77.78
+    [protection_eligibility] => Ineligible
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [payment_date] => 08:51:41 Jul 12, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Alvaro Justo
+    [mc_fee] => 2.11
+    [exchange_rate] => 1.32866
+    [notify_version] => 3.5
+    [custom] => 
+    [settle_currency] => USD
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [quantity] => 1
+    [verify_sign] => A.ZfdZxEz6jhrSKiOFGtNK.yX8TCAyIAJlciSCdbKN53q32g2ZhiWaon
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 88S07218PP893410K
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [payment_fee] => 
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 62e5be7f1433
+)
+[2012-07-12 09:51:46] - PENDIENTE
+[2012-07-12 09:51:46]
+Array
+(
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:51:41 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => Arkv8udb4VhRZ39gkX1p0YeHCtXIArk2YtvtsNaCygvA9BUgi1dbAgjQ
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 88S07218PP893410K
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => a9cec0216bf84
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:51:41 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => Arkv8udb4VhRZ39gkX1p0YeHCtXIArk2YtvtsNaCygvA9BUgi1dbAgjQ
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 88S07218PP893410K
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => a9cec0216bf84
+)
+[2012-07-12 09:25:51]
+Array
+(
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:23:24 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AHIjJubyuj6HucF4y7hNWApFrEFGAaBrVTU7bSc7AwJ66ZC.1AjLjQzs
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 94T430552J119064M
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Denied
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 9131dfbe59bd9
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:23:24 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AHIjJubyuj6HucF4y7hNWApFrEFGAaBrVTU7bSc7AwJ66ZC.1AjLjQzs
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 94T430552J119064M
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Denied
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 9131dfbe59bd9
+)
+[2012-07-12 09:23:27]
+Array
+(
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:23:24 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AsrX5fNK8-LlA4nX7hfKjIZicJfzACfGMydZ2pkAyHRN43z3A45FQlUJ
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 94T430552J119064M
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 7908507ca91b3
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:23:24 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AsrX5fNK8-LlA4nX7hfKjIZicJfzACfGMydZ2pkAyHRN43z3A45FQlUJ
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 94T430552J119064M
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 7908507ca91b3
+)
+[2012-07-12 09:20:54]
+Array
+(
+    [mc_gross] => 60.65
+    [settle_amount] => 77.78
+    [protection_eligibility] => Ineligible
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [payment_date] => 08:00:53 Jul 12, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Alvaro Justo
+    [mc_fee] => 2.11
+    [exchange_rate] => 1.32866
+    [notify_version] => 3.5
+    [custom] => 
+    [settle_currency] => USD
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [quantity] => 1
+    [verify_sign] => An5ns1Kso7MWUdW4ErQKJJJ4qi4-A32gReIi96Mz8HOCkThoc48iJLWU
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 7L0925035N646211E
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [payment_fee] => 
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 5167f5c8d8d93
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [mc_gross] => 60.65
+    [settle_amount] => 77.78
+    [protection_eligibility] => Ineligible
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [payment_date] => 08:00:53 Jul 12, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => Alvaro Justo
+    [mc_fee] => 2.11
+    [exchange_rate] => 1.32866
+    [notify_version] => 3.5
+    [custom] => 
+    [settle_currency] => USD
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [quantity] => 1
+    [verify_sign] => An5ns1Kso7MWUdW4ErQKJJJ4qi4-A32gReIi96Mz8HOCkThoc48iJLWU
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 7L0925035N646211E
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [payment_fee] => 
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 5167f5c8d8d93
+)
+[2012-07-12 09:01:01]
+Array
+(
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:00:53 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AerUqgNxK57ugC7cTKHZhVpuqEizAzk5tXeLj-0eq2j1Mql4FSPHYMLX
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 7L0925035N646211E
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 3bb413f5d97a7
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [transaction_subject] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [txn_type] => web_accept
+    [payment_date] => 08:00:53 Jul 12, 2012 PDT
+    [last_name] => Michel Barrera
+    [residence_country] => US
+    [pending_reason] => multi_currency
+    [item_name] => Pago por factura: 2/2012 de Julio/2012 en Lovende.com
+    [payment_gross] => 
+    [mc_currency] => EUR
+    [business] => goaamb_1263399689_biz@gmail.com
+    [payment_type] => instant
+    [protection_eligibility] => Ineligible
+    [verify_sign] => AerUqgNxK57ugC7cTKHZhVpuqEizAzk5tXeLj-0eq2j1Mql4FSPHYMLX
+    [payer_status] => verified
+    [test_ipn] => 1
+    [tax] => 0.00
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 7L0925035N646211E
+    [quantity] => 1
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [first_name] => Alvaro Justo
+    [payer_id] => 858TQMYN7A726
+    [receiver_id] => MVH5WUYVDYXAQ
+    [item_number] => 2/2012
+    [handling_amount] => 0.00
+    [payment_status] => Pending
+    [shipping] => 0.00
+    [mc_gross] => 60.65
+    [custom] => 
+    [charset] => windows-1252
+    [notify_version] => 3.5
+    [ipn_track_id] => 3bb413f5d97a7
+)
+[2012-07-11 14:01:50]
+Array
+(
+    [mc_gross] => 60.65
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 05:47:43 Jul 11, 2012 PDT
+    [payment_status] => Denied
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => Au4ELaUb.ab.JsAT95PZwx26nXFlAghlt3yfT6bNbzAezGbT3Aamoc8o
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 97986739CC057122V
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 6b14e7ad5131c
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [mc_gross] => 60.65
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 05:47:43 Jul 11, 2012 PDT
+    [payment_status] => Denied
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => Au4ELaUb.ab.JsAT95PZwx26nXFlAghlt3yfT6bNbzAezGbT3Aamoc8o
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 97986739CC057122V
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 6b14e7ad5131c
+)
+[2012-07-11 06:47:45]
+Array
+(
+    [mc_gross] => 60.65
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 05:47:43 Jul 11, 2012 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => Ai1PaghZh5FmBLCDCTQpwG8jB264Ad6RrZafDxh31F3xMrQUE4O7zrYD
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 97986739CC057122V
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [pending_reason] => multi_currency
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 330460494ea12
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [mc_gross] => 60.65
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 05:47:43 Jul 11, 2012 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => Ai1PaghZh5FmBLCDCTQpwG8jB264Ad6RrZafDxh31F3xMrQUE4O7zrYD
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 97986739CC057122V
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [pending_reason] => multi_currency
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 330460494ea12
+)
+[2012-07-11 06:32:00]
+Array
+(
+    [mc_gross] => 60.65
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 05:31:57 Jul 11, 2012 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => A4HvpX6r4AfXN0EWV61qeaCz2El0AAQ6MbbY.Ga5jMtLP42WbYdjpyWD
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 83904015V6203635W
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [pending_reason] => multi_currency
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 4cb51c90a9984
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/2] => 
+    [mc_gross] => 60.65
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 05:31:57 Jul 11, 2012 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => A4HvpX6r4AfXN0EWV61qeaCz2El0AAQ6MbbY.Ga5jMtLP42WbYdjpyWD
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 83904015V6203635W
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [pending_reason] => multi_currency
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 2/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 4cb51c90a9984
+)
+[2012-07-10 17:41:57]
+Array
+(
+    [mc_gross] => 24.78
+    [settle_amount] => 31.50
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 16:36:35 Jul 10, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [mc_fee] => 1.07
+    [address_country_code] => US
+    [exchange_rate] => 1.32855
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [settle_currency] => USD
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => A63Ys-laihiQT.GiaOS1jHzD.8kzABhKIvrCn2byUMHZe73mMpjfGdmw
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0KK55689DX935990L
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [payment_fee] => 
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 1/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 3df9dd9c699d1
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/1] => 
+    [mc_gross] => 24.78
+    [settle_amount] => 31.50
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 16:36:35 Jul 10, 2012 PDT
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [mc_fee] => 1.07
+    [address_country_code] => US
+    [exchange_rate] => 1.32855
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [settle_currency] => USD
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => A63Ys-laihiQT.GiaOS1jHzD.8kzABhKIvrCn2byUMHZe73mMpjfGdmw
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0KK55689DX935990L
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [payment_fee] => 
+    [receiver_id] => MVH5WUYVDYXAQ
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 1/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 3df9dd9c699d1
+)
+[2012-07-10 17:36:39]
+Array
+(
+    [mc_gross] => 24.78
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 16:36:35 Jul 10, 2012 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => AQU0e5vuZCvSg-XJploSa.sGUDlpAb19bYVIQ1Ut-vIhfESds5WoGoSk
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0KK55689DX935990L
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [pending_reason] => multi_currency
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 1/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 1ff2939b96835
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/1] => 
+    [mc_gross] => 24.78
+    [protection_eligibility] => Eligible
+    [address_status] => confirmed
+    [payer_id] => 858TQMYN7A726
+    [tax] => 0.00
+    [address_street] => 1 Main St
+    [payment_date] => 16:36:35 Jul 10, 2012 PDT
+    [payment_status] => Pending
+    [charset] => windows-1252
+    [address_zip] => 95131
+    [first_name] => Alvaro Justo
+    [address_country_code] => US
+    [address_name] => Alvaro Justo Michel Barrera
+    [notify_version] => 3.4
+    [custom] => 
+    [payer_status] => verified
+    [business] => goaamb_1263399689_biz@gmail.com
+    [address_country] => United States
+    [address_city] => San Jose
+    [quantity] => 1
+    [verify_sign] => AQU0e5vuZCvSg-XJploSa.sGUDlpAb19bYVIQ1Ut-vIhfESds5WoGoSk
+    [payer_email] => goaamb_1263400097_per@gmail.com
+    [txn_id] => 0KK55689DX935990L
+    [payment_type] => instant
+    [last_name] => Michel Barrera
+    [address_state] => CA
+    [receiver_email] => goaamb_1263399689_biz@gmail.com
+    [receiver_id] => MVH5WUYVDYXAQ
+    [pending_reason] => multi_currency
+    [txn_type] => web_accept
+    [item_name] => Pago por factura de: Julio/2012
+    [mc_currency] => EUR
+    [item_number] => 1/2012
+    [residence_country] => US
+    [test_ipn] => 1
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura de: Julio/2012
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 1ff2939b96835
+)

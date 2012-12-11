@@ -1,0 +1,7 @@
+@CHARSET "ISO-8859-1";
+
+#productGallery {
+	width: 640px;
+	height: 480px;
+	overflow: hidden;
+}

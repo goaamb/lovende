@@ -1,0 +1,8 @@
+@CHARSET "ISO-8859-1";
+
+.user-box .avatar {
+	width: 35px;
+	height: 35px;
+	background: white center center no-repeat scroll;
+	display: inline-block;
+}

@@ -6,6 +6,12 @@ class Home extends BaseController {
 		$this->load->model ( "Categoria_model", "categoria" );
 		$this->load->model ( "Articulo_model", "articulo" );
 	}
+	public function exportarDiccionario() {
+		$sql = "SELECT d.hash,de.traduccion,di.traduccion
+FROM (select hash from `diccionario` group by hash) d
+left join diccionario de on de.hash=d.hash and de.lenguaje=4
+left join diccionario di on di.hash=d.hash and di.lenguaje=2";
+	}
 	public function sitemap() {
 		$r = false;
 		$url = array ();

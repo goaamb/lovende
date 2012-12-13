@@ -7,10 +7,79 @@ class Home extends BaseController {
 		$this->load->model ( "Articulo_model", "articulo" );
 	}
 	public function exportarDiccionario() {
-		$sql = "SELECT d.hash,de.traduccion,di.traduccion
-FROM (select hash from `diccionario` group by hash) d
-left join diccionario de on de.hash=d.hash and de.lenguaje=4
-left join diccionario di on di.hash=d.hash and di.lenguaje=2";
+		$res = $this->db->query ( "SELECT d.hash hash,de.traduccion esp,di.traduccion eng
+			FROM (select hash from `diccionario` group by hash) d
+			left join diccionario de on de.hash=d.hash and de.lenguaje=4
+			left join diccionario di on di.hash=d.hash and di.lenguaje=2" )->result ();
+		if (is_array ( $res ) && count ( $res ) > 0) {
+			$this->load->library ( "PHPExcel" );
+			$objPHPExcel = $this->phpexcel;
+			
+			$h = $objPHPExcel->setActiveSheetIndex ( 0 );
+			$objPHPExcel->getActiveSheet ()->setTitle ( 'Traducciones' );
+			$h->setCellValue ( "A1", "Hash" );
+			$h->setCellValue ( "B1", "Español" );
+			$h->setCellValue ( "C1", "Inglés" );
+			foreach ( $res as $i => $diccionario ) {
+				$h->setCellValue ( "A" . ($i + 2), $diccionario->hash );
+				$h->setCellValue ( "B" . ($i + 2), $diccionario->esp );
+				$h->setCellValue ( "C" . ($i + 2), $diccionario->eng );
+			}
+			$objWriter = PHPExcel_IOFactory::createWriter ( $objPHPExcel, 'Excel2007' );
+			$base = "files/" . rand () . ".xlsx";
+			$dir = BASEPATH . "../$base";
+			$objWriter->save ( $dir );
+			redirect ( $base, "refresh" );
+			return;
+		}
+		redirect ( base_url (), "refresh" );
+	}
+	public function importarDiccionario() {
+		$data = array ();
+		$archivo = (isset ( $_FILES ) && isset ( $_FILES ["archivo"] )) ? $_FILES ["archivo"] : false;
+		if ($archivo && is_file ( $archivo ["tmp_name"] )) {
+			ini_set ( "max_execution_time", 3600 );
+			ini_set ( "memory_limit", "256M" );
+			$u = $this->usuario->darUsuarioXId ( $usuario );
+			require_once (BASEPATH . "../apps/libraries/PHPExcel/IOFactory.php");
+			$objPHPExcel = PHPExcel_IOFactory::load ( $archivo ["tmp_name"] );
+			$h = $objPHPExcel->getActiveSheet ();
+			$r = 2;
+			$cHash = 0;
+			$cEsp = 1;
+			$cEng = 2;
+			$count = 0;
+			$categorias = array ();
+			do {
+				$hash = $h->getCellByColumnAndRow ( $cHash, $r )->getValue ();
+				if ($hash) {
+					$esp = $h->getCellByColumnAndRow ( $cEsp, $r )->getValue ();
+					$eng = $h->getCellByColumnAndRow ( $cEng, $r )->getValue ();
+					$this->db->update ( "diccionario", array (
+							"traduccion" => $esp,
+							"traducido" => "Si" 
+					), array (
+							"hash" => $hash,
+							"lenguaje" => 4 
+					) );
+					$this->db->update ( "diccionario", array (
+							"traduccion" => $eng,
+							"traducido" => "Si" 
+					), array (
+							"hash" => $hash,
+							"lenguaje" => 2 
+					) );
+					$count ++;
+				}
+				$r ++;
+			} while ( trim ( $hash ) !== "" );
+			if ($count > 0) {
+				$data ["Mensaje"] = "Se importaron $count Traducciones";
+			} else {
+				$data ["Error"] = "No se importo ninguna Traducción";
+			}
+		}
+		$this->loadGUI ( "diccionario", $data );
 	}
 	public function sitemap() {
 		$r = false;
@@ -232,7 +301,6 @@ left join diccionario di on di.hash=d.hash and di.lenguaje=2";
 					$articulo->pagos = $tipo_pago;
 					
 					if ($h->getCellByColumnAndRow ( $c + 7, $r )->getValue () != '') {
-						
 						$img = str_replace ( " ", "%20", $h->getCellByColumnAndRow ( $c + 7, $r )->getValue () );
 						$ext = pathinfo ( $img, PATHINFO_EXTENSION );
 						$basename = pathinfo ( $img, PATHINFO_BASENAME );

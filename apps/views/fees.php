@@ -8,7 +8,7 @@
 
 		</p>
 	</header>
-<?=traducir ( \"<div class=\"post\">
+<?=traducir ( "<div class=\"post\">
 		<p>
 			<strong>Nótese:</strong> IVA no incluido. Sólo se aplicará la
 			comisión cuando usted confirme la recepción del cobro.
@@ -156,6 +156,6 @@
 				href=\"home/modal/enviar-mail/mail/1\" class=\"nmodal\">contacte con
 				nosotros.</a>
 		</p>
-	</div>\" )?>
+	</div>" )?>
 	
 </div>

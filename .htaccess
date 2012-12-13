@@ -13,13 +13,13 @@ RewriteBase /
     RewriteRule ^(.*)$ http://www.lovende.es/$1 [R=301,L]
     
     RewriteCond %{HTTP_HOST} ^sandbox.lovende.com$ [NC]
-    RewriteCond %{REMOTE_ADDR} !^190.129.234.126 
-    RewriteCond %{REMOTE_ADDR} !^200.58.92.6
+    RewriteCond %{REMOTE_ADDR} !^190.106.241.120 
+    RewriteCond %{REMOTE_ADDR} !^88.16.228.206
     RewriteRule ^(.*)$ http://www.lovende.es/$1 [R=301,L]
  
     RewriteCond %{HTTP_HOST} ^sandbox.lovende.nakoko.com$ [NC]
-    RewriteCond %{REMOTE_ADDR} !^190.129.234.126 
-    RewriteCond %{REMOTE_ADDR} !^200.58.92.6
+    RewriteCond %{REMOTE_ADDR} !^190.106.241.120 
+    RewriteCond %{REMOTE_ADDR} !^88.16.228.206
     RewriteRule ^(.*)$ http://www.lovende.es/$1 [R=301,L]
     
     RewriteCond %{REQUEST_URI} ^kernel.*

@@ -40,7 +40,6 @@ class Home extends BaseController {
 		if ($archivo && is_file ( $archivo ["tmp_name"] )) {
 			ini_set ( "max_execution_time", 3600 );
 			ini_set ( "memory_limit", "256M" );
-			$u = $this->usuario->darUsuarioXId ( $usuario );
 			require_once (BASEPATH . "../apps/libraries/PHPExcel/IOFactory.php");
 			$objPHPExcel = PHPExcel_IOFactory::load ( $archivo ["tmp_name"] );
 			$h = $objPHPExcel->getActiveSheet ();

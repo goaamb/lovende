@@ -69,7 +69,7 @@ aside .search-box .apaisado .texto {width: 130px; float: right;}
 /*	result-list --- */
 header.cont-cab {padding: 10px; background: #e5e5e5; padding: 7px 10px; margin-bottom:20px; font-size: 15px; color:#333; position: relative;}
 header.cont-cab .action {position: absolute; bottom: 7px; right: 10px; font-size: 1.25em;}
-header.cont-cab h1 {font-weight: bold; font-size: 1.8em; margin-bottom: 2px;}
+header.cont-cab h1 {font-weight: bold; font-size: 22px; margin-bottom: 2px; color: #000;}
 .item {border-bottom: 1px dotted #a93029; margin-bottom: 15px; padding-bottom: 15px; font-size: 1.5em; display: block;}
 .item.last-child {border-bottom: none; padding-bottom: 0;}
 .item .imagen {float: left; margin: 0 15px 0 0;}
@@ -253,3 +253,62 @@ header.header {position: relative;}
 #miperfil-desplegable ul {margin: 10px 10px;}
 #miperfil-desplegable ul li {margin: 9px 0;}
 #miperfil-desplegable ul li a {display: block;}
+
+/* dic 12 --- */
+body {background: #fff; /* eliminamos color de fondo para topPubli*/}
+.content {padding-bottom: 20px;}
+.col300 {width: 300px; float: right;}
+header.header-new {display: block;}
+header.header-new .topNav {font-size: 13px; text-align: right; color: #000; margin: 10px 0;}
+header.header-new .topNav a {color:#005889; border-right: 1px solid #000; padding: 0 7px;}
+header.header-new .topNav a.last {padding-right: 0; border-right: none;}
+header.header-new .redBox {width: 762px; height: 32px; padding: 16px 20px; float: left; background-color: #cb000d; border-radius:5px;}
+header.header-new .blueBt {width: 218px; float: right;}
+header.header-new .blueBt a {width: 218px; height: 64px; line-height: 64px; text-align: center; display: block; background: url(../images/css/bg-header-blue-bt.png) 0 0 no-repeat; color:#fff; font-weight: bold; font-size: 16px; text-shadow: 0px -1px 0px navy;}
+header.header-new .redBox h1 a {background: url(../images/css/logo-lovende-new.png) 0 0 no-repeat; display: block; text-indent: -99999px; width: 96px; height: 20px; float: left; margin: 5px 20px 0 0;}
+header.header-new .search-box {float: left; margin: 0; font-size: 15px;}
+header.header-new .search-box .label-on-field label  {top:8px;}
+header.header-new .search-box .texto {background: #fff; font-size: 15px; height: 21px; padding: 5px 7px; border: none; width: 285px; box-shadow: inset 0 0 5px #999; border-radius: 4px; margin-right: 5px;}
+header.header-new .search-box .bt {background: url(../images/ico/ico-lupa.png) 7px 10px no-repeat; padding: 5px 10px 5px 23px; font-weight: normal; font-size: 15px; background-color: #e3e3e3; border-radius: 4px; border: none; height: 31px; position: relative; top:1px;  box-shadow: 1px 1px 1px #77070C;}
+header.header-new .search-box .bt:hover {cursor: pointer; text-decoration: underline;}
+header.header-new .topNav a.active {border: 1px solid #cb000d; border-bottom: none; display: inline-block; padding: 5px 7px; margin-top: -6px; margin-bottom: -5px; position: relative; z-index: 1001; background-color: #fff;}
+#miperfil-desplegable-new {background-color:#fff; border: 1px solid #cb000d; padding: 0 10px 5px; position: absolute; font-size: 13px; z-index: 1000; display: none;}
+#miperfil-desplegable-new li {margin: 5px 0;}
+
+footer.footer-new {background-color: #cb000d; border-radius:5px; display: block; padding: 20px 10px 10px; width: 1004px; color:#fff; font-size: 13px;}
+footer.footer-new .col {float: left; width: 230px; margin: 0 10px;}
+footer.footer-new .col h3 {font-size: 15px; font-weight: bold; margin-bottom: 10px;}
+footer.footer-new .col li {margin-bottom: 10px;}
+footer.footer-new .col li a {color: #fff;}
+
+.categoriesBox {border:1px solid #ccc; border-radius: 5px; font-size: 15px; width: 705px; height: 347px;}
+.categoriesBox .cab {border-bottom:1px solid #ccc; background-color: #f1f1f1; padding: 10px 20px;}
+.categoriesBox .cab h2 {font-size: 22px;}
+.categoriesBox .cab h2 a {font-size: 15px; margin-left: 5px;}
+.categoriesBox .cont {padding: 19px 20px 10px; display: block;}
+.categoriesBox .cont .col {width: 32%; margin: 0 1% 0 0; float: left;}
+.categoriesBox .cont .col li {margin-bottom: 5px;}
+
+.siguenos300 {border:1px solid #ccc; border-width: 1px 1px 2px; border-radius: 5px; font-size: 13px; background:#f1f1f1 url(../images/css/degradado.png) 0 0 repeat-x; margin-bottom: 18px; padding: 12px 20px; height: 98px;}
+.siguenos300 h2 {font-size: 22px; margin-bottom: 2px;}
+.siguenos300 .fb {display: block; margin: 15px 0 5px;}
+.bannerIpad a {background:url(../images/css/banner-ipad.png) 0 0 no-repeat; display: block; width: 110px; height: 136px; padding: 70px 100px 0 90px; color:#fff; font-size: 14px;}
+
+/*	carruselHome ------------------ */
+.carruselHome {border:1px solid #ccc; border-radius: 5px; padding: 10px 20px 17px; margin: 15px 0 0;}
+.carruselHome h3 {font-size: 16px; margin-bottom: 22px}
+.carruselHome .jcarousel-clip { overflow: hidden; width: 900px; margin-left: 45px;}
+#carruselHome li div.image {width: 150px; height: 95px; margin-bottom: 10px;}
+#carruselHome li div.image img {max-width: 150px; max-height: 95px;}
+#carruselHome li {font-size: 13px; width: 150px; margin: 0 15px;}
+#carruselHome li .price {font-size: 16px; font-weight: bold; margin-top: 5px;}
+.jcarousel-next-horizontal { position: absolute; top: 60px; right: 0;  width: 20px; height: 29px;  cursor: pointer;  background: transparent url(../images/ico/next-horizontal.png) no-repeat 0 0;}
+.jcarousel-next-disabled-horizontal,
+.jcarousel-next-disabled-horizontal:hover,
+.jcarousel-next-disabled-horizontal:focus,
+.jcarousel-next-disabled-horizontal:active { cursor: default; opacity: .6;}
+.jcarousel-prev-horizontal {  position: absolute;  top: 60px; left: 0; width: 29px; height: 29px; cursor: pointer; background: transparent url(../images/ico/prev-horizontal.png) no-repeat 0 0;}
+.jcarousel-prev-disabled-horizontal,
+.jcarousel-prev-disabled-horizontal:hover,
+.jcarousel-prev-disabled-horizontal:focus,
+.jcarousel-prev-disabled-horizontal:active { cursor: default; opacity: .6;}

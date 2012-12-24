@@ -1087,13 +1087,17 @@ class Home extends BaseController {
 			$action = array_shift ( $uri );
 			$pagina = intval ( $this->input->get ( "pagina" ) );
 			$pagina = $pagina >= 1 ? $pagina : 1;
-			$data = array_merge ( $this->articulo->leerArticulos ( $pagina, $this->input->get ( "criterio" ), $action, $this->input->get ( "orden" ), $this->input->get ( "ubicacion" ), $this->input->get ( "categoria" ), $this->idioma->language->id ), array (
-					"section" => $action,
-					"orden" => $this->input->get ( "orden" ),
-					"ubicacion" => $this->input->get ( "ubicacion" ),
-					"categoria" => $this->input->get ( "categoria" ) 
-			) );
-			$this->loadGUI ( "home", $data, $header );
+			if ($uri && $section && $action) {
+				$data = array_merge ( $this->articulo->leerArticulos ( $pagina, $this->input->get ( "criterio" ), $action, $this->input->get ( "orden" ), $this->input->get ( "ubicacion" ), $this->input->get ( "categoria" ), $this->idioma->language->id ), array (
+						"section" => $action,
+						"orden" => $this->input->get ( "orden" ),
+						"ubicacion" => $this->input->get ( "ubicacion" ),
+						"categoria" => $this->input->get ( "categoria" ) 
+				) );
+				$this->loadGUI ( "home", $data, $header );
+			}else{
+				
+			}
 		} else {
 			$cats = $this->categoria->darCategoriasXNivel ( 1 );
 			$retcat = $this->parseCategories ( $cats );

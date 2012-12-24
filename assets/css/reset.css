@@ -21,6 +21,7 @@ a	 {outline:none;}
 strong {font-weight: bold;}
 nav, header, footer, section, aside, article {display: block;}
 .justify {text-align: justify;}
+.f11	{font-size: 11px;}
 /* estructura ------------------------- */
 .d-b 		{display: block !important;}
 .d-i 		{display: inline !important;}

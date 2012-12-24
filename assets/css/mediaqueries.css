@@ -15,4 +15,10 @@ and (max-width : 1024px) {
 	.product-file .data .formA .recuadro input[type="text"] { width: 120px;}
 	.product-file .bt-blue {padding: 5px 16px;}
 	.product-file .gallery li {width: 641px;}
+	/*/ dic 12*/
+	footer.footer-new {width: 940px;}
+	footer.footer-new .col{width: 215px;}
+	header.header-new .redBox {width: 698px;}
+	header.header-new .blueBt {width: 218px;}
+	.categoriesBox {width: 641px;}
 }

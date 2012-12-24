@@ -86,6 +86,54 @@ $(function() {
 		var w2 = $(this).children('.o').width();
 		$(this).width(w1+w2+250);
 	});
+	
+	/* sept'12. miperfil-desplegable --- */
+	$('.showMiperfil').mouseover(function(){
+		var $this = $(this);
+		var desplegable = $('#miperfil-desplegable');
+		var offset = $this.offset();
+		var w = $this.outerWidth();
+		var w2 = w+22;
+		var w3 = (w2-w);
+		var hh = $('header.header').outerHeight();
+		$this.css({'position' : 'relative', 'z-index' : '300', 'color' : '#035F8D', 'border-color' : '#ffe8dd'});
+		$('#miperfil-desplegable header').height(hh-1).width(w+22);	
+		desplegable.css({'left': offset.left-w3}).fadeIn(200);
+	});
+	$('#miperfil-desplegable').mouseover(function(){
+		$('.showMiperfil').css({'position' : 'relative', 'z-index' : '300', 'color' : '#035F8D', 'border-color' : '#ffe8dd'});
+		$(this).css('display', 'block');
+	});
+	$('.showMiperfil').mouseout(function(){
+		$(this).css({'position' : 'static', 'z-index' : '1', 'color' : '#fff', 'border-color' : '#E3554F'});
+		$('#miperfil-desplegable').hide();
+	});
+	$('#miperfil-desplegable').mouseout(function(){
+		$('.showMiperfil').css({'position' : 'static', 'z-index' : '1', 'color' : '#fff', 'border-color' : '#E3554F'});
+		$(this).hide();
+	});
+	
+	/* dic 12 miperfil-desplegable-new --- */
+	$('.showMiperfil-new').mouseover(function(){
+		var $this = $(this);
+		var desplegable = $('#miperfil-desplegable-new');
+		var offset = $this.offset();
+		var h = $this.height();
+		$this.addClass('active');
+		desplegable.css({'left': offset.left-1, 'top': offset.top+(h+5-1)}).show();
+	});
+	$('#miperfil-desplegable-new').mouseover(function(){
+		$('.showMiperfil-new').addClass('active');
+		$(this).show();
+	});
+	$('.showMiperfil-new').mouseout(function(){
+		$(this).removeClass('active');
+		$('#miperfil-desplegable-new').hide();
+	});
+	$('#miperfil-desplegable-new').mouseout(function(){
+		$('.showMiperfil-new').removeClass('active');
+		$(this).hide();
+	});
 
 });
 

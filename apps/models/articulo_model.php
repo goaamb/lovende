@@ -2978,6 +2978,25 @@ class Articulo_model extends CI_Model {
 		}
 		return false;
 	}
+	public function leer25Articulos() {
+		return $this->leerNArticulos(25);
+	}
+	public function leer10Articulos() {
+		return $this->leerNArticulos(10);
+	}
+	public function leerNArticulos($n) {
+		$precio = "articulo.precio";
+		$sql = "SELECT articulo.id,articulo.titulo,articulo.tipo,$precio ,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto
+		FROM (articulo)
+		INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.estado<>'Baneado'
+		WHERE terminado = 0 and articulo.estado<>'Baneado'
+		ORDER BY fecha_registro desc
+		limit 0,$n
+		";
+		$res = $this->db->query ( $sql )->result ();
+		$this->procesarArticulos ( $res );
+		return $res;
+	}
 	public function prepararConsultaArticuloXCriterioFecha($criterio = false, $tipo = false, $orden = false, $ubicacion = false, $categoria = false, $idioma = false, $usuario = false) {
 		$tiempo = time ();
 		if (trim ( $orden ) === "" && $usuario) {

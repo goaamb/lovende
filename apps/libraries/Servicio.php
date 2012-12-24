@@ -713,10 +713,12 @@ class Servicio {
 		$this->CI->load->model ( "articulo_model", "articulo" );
 		$this->CI->load->model ( "usuario_model", "usuario" );
 		$this->CI->load->library ( "myemail" );
+		print "0";
 		$articulos = $this->CI->articulo->listarArticulosPendientes ();
 		if ($articulos) {
 			$ahora = time ();
 			foreach ( $articulos as $articulo ) {
+				print "1";
 				if ($articulo->tipo == "Subasta") {
 					$tiempo = strtotime ( $articulo->fecha_registro ) + $articulo->duracion * 86400;
 					if ($tiempo <= $ahora) {

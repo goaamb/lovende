@@ -31,8 +31,8 @@ ul.listaNivel1 a.parent {
 
 .label-on-field .resetBusqueda {
 	position: absolute;
-	right: 2px;
-	top: 2px;
+	right: 6px;
+	top: 0px;
 	width: 31px;
 	height: 31px;
 	text-align: center;
@@ -345,4 +345,8 @@ ul.ver-mas li a,ul.ver-mas li span {
 
 ul.ver-mas li span {
 	color: #CCC;
+}
+
+.label-on-field {
+	display: inline-block;
 }

@@ -2,12 +2,13 @@
 	<header class="cont-cab">
 		<h1><?=traducir ( "Privacidad" )?></h1>
 		<p>
-			<a href="benefit"><?=traducir ( "¿Por qué Lovende?" )?></a> | <a href="fees"><?=traducir ( "Tarifas de
+			<a href="benefit"><?=traducir ( "¿Por qué Lovende?" )?></a> | <a
+				href="fees"><?=traducir ( "Tarifas de
 				venta" )?></a> | <a href="terms"><?=traducir ( "Términos de uso" )?></a> | <?=traducir ( "Privacidad" )?></a>
 		</p>
 	</header>
 
-	<div class=\"post\"><?=traducir ( \"<p>
+	<div class="post"><?=traducir ( "<p>
 			<strong>Información legal</strong> <br> Este sitio web está
 			gestionado por Romuald Fons Rojas, titular del dominio
 			http://www.lovende.es/, de nacionalidad española con domicilio
@@ -125,7 +126,7 @@
 			Lovende se reserva la rescisión de los servicios que realiza, en
 			aquellos usuarios que no cumplan con los términos y condiciones
 			legales de uso, así como con la legislación vigente.
-		</p>\" )?>
+		</p>" )?>
 		
 
 

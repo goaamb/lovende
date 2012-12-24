@@ -821,7 +821,9 @@ class Home extends BaseController {
 			$asuntos = array (
 					1 => traducir ( "Consulta de tarifas" ),
 					2 => traducir ( "Consulta de privacidad" ),
-					3 => traducir ( "Consulta de cuenta suspendida" ) 
+					3 => traducir ( "Consulta de cuenta suspendida" ),
+					4 => traducir ( "Formulario de Contacto" ),
+					5 => traducir ( "¿Tienes alguna pregunta?" ) 
 			);
 			$id = array_search ( $id, array_keys ( $asuntos ) ) !== false ? $id : 1;
 			$data ["asunto"] = $asuntos [$id];
@@ -1087,7 +1089,10 @@ class Home extends BaseController {
 			$action = array_shift ( $uri );
 			$pagina = intval ( $this->input->get ( "pagina" ) );
 			$pagina = $pagina >= 1 ? $pagina : 1;
-			if ($uri && $section && $action) {
+			if(isset($_GET["lang"])){
+				unset($_GET["lang"]);
+			}
+			if ($uri || $section || $action || count ( $_GET ) > 0) {
 				$data = array_merge ( $this->articulo->leerArticulos ( $pagina, $this->input->get ( "criterio" ), $action, $this->input->get ( "orden" ), $this->input->get ( "ubicacion" ), $this->input->get ( "categoria" ), $this->idioma->language->id ), array (
 						"section" => $action,
 						"orden" => $this->input->get ( "orden" ),
@@ -1095,8 +1100,14 @@ class Home extends BaseController {
 						"categoria" => $this->input->get ( "categoria" ) 
 				) );
 				$this->loadGUI ( "home", $data, $header );
-			}else{
+			} else {
 				
+				$cats = $this->categoria->darCategoriasXNivel ( 1 );
+				$retcat = $this->parseCategories ( $cats );
+				$this->loadGUI ( "index", array (
+						"categorias" => $retcat,
+						"articulos" => $this->articulo->leer25Articulos () 
+				), $header );
 			}
 		} else {
 			$cats = $this->categoria->darCategoriasXNivel ( 1 );

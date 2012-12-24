@@ -67,8 +67,8 @@ $(function() {
 
 <body>
 <?php
-			if ($publi) {
-				?>
+if ($publi) {
+	?>
 	<div class="top-publi">
 		<script type="text/javascript"><!--
 google_ad_client = "ca-pub-5921475361745899";
@@ -80,36 +80,40 @@ google_ad_height = 90;
 </script>
 		<script type="text/javascript"
 			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
+</script><?php
+}
+?>
 		<div class="wrapper">
 			<header class="header-new clearfix">
 				<div class="topNav">
 				<?php
-			if ($usuario) {
-				$imagen = imagenPerfil ( $usuario, "small" );
-				?>
-				<div class="showMiperfil">
-						<a href="store/<?=$this->myuser->seudonimo?>"  class="avatar" style="background-image: url(<?=$imagen."?rand=".rand();?>);"></a>
-						<a href="store/<?=$this->myuser->seudonimo?>" class="sep">Mi tienda <?=($totalNoVistos>0?"($totalNoVistos)":"")?></a>
-					</div> <?php
-				if ($usuario->tipo == 'Administrador') {
-					?><a href="administration/dashboard"
-						title="<?=traducir("ir a la administración");?>" class="sep">Dashboard</a> <?php
-				}
-				?><a
+				if ($usuario) {
+					$imagen = imagenPerfil ( $usuario, "small" );
+					?>
+			<a class="showMiperfil-new"
+						href="store/<?=$this->myuser->seudonimo?>" title="Ir a mi tienda"><?=traducir("Mi tienda");?> <span
+						class="f11"><?=($totalNoVistos>0?"($totalNoVistos)":"")?></span></a> 
+			<?php
+					if ($usuario->tipo == 'Administrador') {
+						?><a href="administration/dashboard"
+						title="<?=traducir("ir a la administración");?>">Dashboard</a> <?php
+					}
+					?>
+			<a
 						href="<?=($usuario->estado==="Incompleto"?"home/modal/informacion-compra-venta":"product/nuevo");?>"
 						title="<?=traducir("Vender artículo");?>"
 						class="<?=($usuario->estado==="Incompleto"?"nmodal":"");?> sep"><?=traducir("Vender");?></a>
-					<a href="logout" title="<?=traducir("Salir");?>"><?=traducir("Salir");?></a>
+					<a href="logout" title="<?=traducir("Salir");?>" class="last"><?=traducir("Salir");?></a>
 			<?php }else {?><a href="login"
-						title="<?=traducir("Entra con tu cuenta");?>" class="sep"><?=traducir("Entrar");?></a>
-					<a href="register" title="<?=traducir("Registrate");?>" class=""><?=traducir("Registrarse");?></a>
+						title="<?=traducir("Entra con tu cuenta");?>"><?=traducir("Entrar");?></a>
+					<a href="register" title="<?=traducir("Registrate");?>"
+						class="last"><?=traducir("Registrarse");?></a>
 			<?php }?>
 			</div>
 				<!--topNav-->
 				<?php
-			if ($usuario) {
-				?><div id="miperfil-desplegable-new">
+				if ($usuario) {
+					?><div id="miperfil-desplegable-new">
 					<header></header>
 					<ul>
 						<li><a href="store/<?=$usuario->seudonimo?>/sell" title=""><?=traducir("Ventas");?><?=$totalVentas>0?" ($totalVentas)":""?></a></li>
@@ -119,8 +123,8 @@ google_ad_height = 90;
 						<li><a href="store/<?=$usuario->seudonimo?>/billing" title=""><?=traducir("Cuentas");?><?=$totalCuentas>0?" ($totalCuentas)":""?></a></li>
 					</ul>
 				</div><?php
-			}
-			?>
+				}
+				?>
 			<div class="redBox">
 					<h1>
 						<a href="<?php site_url("/");?>"
@@ -145,146 +149,16 @@ google_ad_height = 90;
 									<?=(($this->input->get("usuario")?"":$this->input->get("criterio"))?"style='display:block';":"")?>
 									onclick="resetBusqueda();">x</span>
 							</p>
+							<input type="button" class="bt" value="Buscar" />
 						</form>
 					</div>
 				</div>
 				<!--redBox-->
 				<div class="blueBt">
-					<a href="#" title="vende gratis">Poner en venta gratis</a>
+					<a
+						href="<?=(isset($usuario) && $usuario && $usuario->estado==="Incompleto"?"home/modal/informacion-compra-venta":"product/nuevo");?>"
+						title="<?=traducir("vende gratis")?>"><?=traducir("Poner en venta gratis")?></a>
 				</div>
 				<!--blueBt-->
-			</header><?php
-		if (false) {
-			?>
-<!doctype html>
-			<html lang="es">
-<head>
-<meta charset="utf-8">
-<title><?=$headerTitle?></title>
-<base href="<?=base_url();?>" />
-<meta name="description" content="<?=$headerDescripcion?>" />
-<meta name="keywords" content="<?=$headerKeywords?>" />
-<?=$extraMeta?>
-<link rel="stylesheet" type="text/css" href="assets/css/reset.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/extra.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/nyroModal.css" />
-<link rel="stylesheet" type="text/css"
-	href="assets/css/mediaqueries.css" />
-<link rel="stylesheet" type="text/css"
-	href="assets/css/mediaqueries.css" />
-<link rel="stylesheet" type="text/css" href="assets/css/style2.css" />
-<link rel="shortcut icon" href="assets/icon/favicon.ico" />
-<link href="assets/icon/favicon.ico" rel="shortcut icon"
-	type="image/x-icon" />
-<!--[if lte IE 7]><link rel="stylesheet" type="text/css" href="assets/css/ie7.css" /><![endif]-->
-<script type="text/javascript" src="assets/js/jquery-1.7.2.min.js"></script>
-<script type="text/javascript" src="assets/js/general.js"></script>
-<script type="text/javascript" src="assets/js/piscolabis.framework.js"></script>
-<script type="text/javascript" src="assets/js/jquery.tablesorter.min.js"></script>
-<!--[if lt IE 9]><script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<script type="text/javascript" src="assets/js/easySlider1.7.g.js"></script>
-<script type="text/javascript"
-	src="assets/js/jquery.nyroModal.custom.js"></script>
-<!--[if IE 6]>
-	<script type="text/javascript" src="assets/js/jquery.nyroModal-ie6.min.js">
-<![endif]-->
-<script type="text/javascript" src="assets/js/goaamb/G.js"></script>
-<script type="text/javascript" src="assets/js/valid.js"></script>
-<script type="text/javascript" src="assets/js/general2.js"></script>
-<script type="text/javascript">
-	SeudonimoUsuario='<?php if(isset($usuario) && $usuario){ print "$usuario->seudonimo";}?>';
-	$(function() {
- 	 	$('.nmodal').nyroModal();
-	});
-</script>
-</head>
-<body>
-<?php
-			if ($publi) {
-				?>
-	<div class="top-publi">
-		<script type="text/javascript"><!--
-google_ad_client = "ca-pub-5921475361745899";
-/* Lovende1 */
-google_ad_slot = "6150527728";
-google_ad_width = 728;
-google_ad_height = 90;
-//-->
-</script>
-		<script type="text/javascript"
-			src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-	</div><?php
-			}
-			?>
-	<header class="header">
-
-		<div class="wrapper clearfix">
-			<h1>
-				<a href="<?php site_url("/");?>"
-					title="<?=traducir("Volver a la home");?>">Lovende</a>
-			</h1>
-			<div class="search-box">
-				<form action="" method="get"
-					onsubmit="return cambiarCriterioBusqueda.call(this.criterio);">
-					<p class="label-on-field">
-						<input type="text" class="texto OwnTextBox" name="criterio"
-							data-text="<?=traducir("Buscar artículo");?>"
-							data-class="OwnTextBoxNoData"
-							value="<?=$this->input->get("usuario")?"":$this->input->get("criterio");?>" />
-						<script type="text/javascript">
-							var ot = $(".OwnTextBox");
-							if (ot) {
-								for ( var i = 0; i < ot.length; i++) {
-									G.OwnTextBox.convert(ot[i]);
-								}
-							}</script>
-						<span class="resetBusqueda"
-							<?=(($this->input->get("usuario")?"":$this->input->get("criterio"))?"style='display:block';":"")?>
-							onclick="resetBusqueda();">x</span>
-					</p>
-				</form>
-			</div>
-			<div class="user-box">
-			<?php
-			if ($usuario) {
-				$imagen = imagenPerfil ( $usuario, "small" );
-				?>
-				<div class="showMiperfil">
-					<a href="store/<?=$this->myuser->seudonimo?>"  class="avatar" style="background-image: url(<?=$imagen."?rand=".rand();?>);"></a>
-					<a href="store/<?=$this->myuser->seudonimo?>" class="sep">Mi tienda <?=($totalNoVistos>0?"($totalNoVistos)":"")?></a>
-				</div> <?php
-				if ($usuario->tipo == 'Administrador') {
-					?><a href="administration/dashboard"
-					title="<?=traducir("ir a la administración");?>" class="sep">Dashboard</a> <?php
-				}
-				?><a
-					href="<?=($usuario->estado==="Incompleto"?"home/modal/informacion-compra-venta":"product/nuevo");?>"
-					title="<?=traducir("Vender artículo");?>"
-					class="<?=($usuario->estado==="Incompleto"?"nmodal":"");?> sep"><?=traducir("Vender");?></a>
-				<a href="logout" title="<?=traducir("Salir");?>"><?=traducir("Salir");?></a>
-			<?php }else {?><a href="login"
-					title="<?=traducir("Entra con tu cuenta");?>" class="sep"><?=traducir("Entrar");?></a>
-				<a href="register" title="<?=traducir("Registrate");?>" class=""><?=traducir("Registrarse");?></a>
-			<?php }?>
-			</div>
-			<!--user-box-->
-			<?php
-			if ($usuario) {
-				?><div id="miperfil-desplegable">
-				<header></header>
-				<ul>
-					<li><a href="store/<?=$usuario->seudonimo?>/sell" title=""><?=traducir("Ventas");?><?=$totalVentas>0?" ($totalVentas)":""?></a></li>
-					<li><a href="store/<?=$usuario->seudonimo?>/self" title=""><?=traducir("Compras");?><?=$totalCompras>0?" ($totalCompras)":""?></a></li>
-					<li><a href="store/<?=$usuario->seudonimo?>/following" title=""><?=traducir("Seguimientos");?><?=$totalSeguimientos>0?" ($totalSeguimientos)":""?></a></li>
-					<li><a href="store/<?=$usuario->seudonimo?>/messages" title=""><?=traducir("Mensajes");?><?=$totalMensajes>0?" ($totalMensajes)":""?></a></li>
-					<li><a href="store/<?=$usuario->seudonimo?>/billing" title=""><?=traducir("Cuentas");?><?=$totalCuentas>0?" ($totalCuentas)":""?></a></li>
-				</ul>
-			</div><?php
-			}
-			?>
-		</div>
-		<!--wrapper-->
-	</header><?php }?>
-	<div class="content">
+			</header>
+			<div class="content">

@@ -743,6 +743,7 @@ function cambiarUbicacionBusqueda() {
 	cambiarURLGET("ubicacion", this.value, profile);
 }
 function cambiarCriterioBusqueda(profile) {
+	this.value = this.value.replace($(this).data("text"),"");
 	return cambiarURLGET("criterio", this.value, profile);
 }
 function cambiarBusquedaCategoria(categoria) {
@@ -763,7 +764,7 @@ function cambiarURLGET(variable, valor, profile) {
 	} else if (usuarioID) {
 		url = G.url._setGET("usuario", usuarioID, url);
 	}
-	url = G.url._setGET("pagina", 1,url);
+	url = G.url._setGET("pagina", 1, url);
 	location.href = G.url._setGET(variable, valor, url);
 	return false;
 }

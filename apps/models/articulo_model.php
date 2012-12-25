@@ -1970,13 +1970,13 @@ class Articulo_model extends CI_Model {
 		}
 		return $data;
 	}
-	public function listarArticulosPendientes() {
+	public function listarArticulosPendientes($i = false, $t = false) {
 		$this->db->select ( "*,if(tipo<>'Subasta',unix_timestamp ( fecha_registro ) + " . $this->configuracion->variables ( "vencimientoOferta" ) . " * 86400,unix_timestamp ( fecha_registro ) + duracion * 86400) as tiempo" );
 		$this->db->having ( "tiempo<=unix_timestamp()" );
 		$this->db->where ( array (
 				"terminado" => 0 
 		) );
-		return $this->darTodos ( "articulo" );
+		return $this->darTodos ( "articulo", $t, $i );
 	}
 	public function cantidadOfertasPendientes($articulo) {
 		$this->db->where ( array (
@@ -2979,10 +2979,10 @@ class Articulo_model extends CI_Model {
 		return false;
 	}
 	public function leer25Articulos() {
-		return $this->leerNArticulos(25);
+		return $this->leerNArticulos ( 25 );
 	}
 	public function leer10Articulos() {
-		return $this->leerNArticulos(10);
+		return $this->leerNArticulos ( 10 );
 	}
 	public function leerNArticulos($n) {
 		$precio = "articulo.precio";

@@ -713,14 +713,25 @@ class Servicio {
 		$this->CI->load->model ( "articulo_model", "articulo" );
 		$this->CI->load->model ( "usuario_model", "usuario" );
 		$this->CI->load->library ( "myemail" );
-		print "0";
-		$articulos = $this->CI->articulo->listarArticulosPendientes ();
-		if ($articulos) {
+		$i = 0;
+		$t = 5000;
+		do {
+			if (isset($articulos)) {
+				unset ( $articulos );
+			}
+			$articulos = $this->CI->articulo->listarArticulosPendientes ( $i, $t );
+			$this->procesarPendientes ( $articulos );
+			$i += $t;
+		} while ( is_array ( $articulos ) && count ( $articulos ) > 0 );
+	}
+	public function procesarPendientes($articulos) {
+		if (is_array ( $articulos ) && count ( $articulos ) > 0) {
 			$ahora = time ();
 			foreach ( $articulos as $articulo ) {
-				print "1";
+				print $articulo->tipo . "\n";
 				if ($articulo->tipo == "Subasta") {
 					$tiempo = strtotime ( $articulo->fecha_registro ) + $articulo->duracion * 86400;
+					print ($tiempo - $ahora) . "\n";
 					if ($tiempo <= $ahora) {
 						$this->reMapOfertas ( array (
 								$articulo->id 
@@ -766,6 +777,7 @@ class Servicio {
 				} else {
 					$this->CI->load->library ( "configuracion" );
 					$tiempo = strtotime ( $articulo->fecha_registro ) + intval ( $this->CI->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
+					print ($tiempo - $ahora) . "\n";
 					if ($tiempo <= $ahora) {
 						if ($this->CI->articulo->actualizarPublicacion ( $articulo->id )) {
 							print "[" . date ( "Y-m-d H:i:s" ) . "] - Cambiando la fecha de publicacion del articulo: $articulo->id - $articulo->titulo\n";

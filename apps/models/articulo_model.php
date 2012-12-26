@@ -232,8 +232,20 @@ class Articulo_model extends CI_Model {
 		return $this->darTodos ( "articulo" );
 	}
 	public function actualizarPublicacion($articulo) {
+		$ahora = date ( "Y-m-d H:i:s" );
+		$a = $this->darArticulo ( $articulo );
+		if ($a) {
+			$a->duracion = $a->duracion ? $a->duracion : $this->configuracion->variables ( "vencimientoOferta" );
+			$this->db->update ( "tmp_busqueda", array (
+					"fecha_registro" => $ahora,
+					"tiempo" => ($a->tipo != 'Subasta' ? strtotime ( $a->fecha_registro ) + $this->configuracion->variables ( "vencimientoOferta" ) * 86400 : strtotime ( $a->fecha_registro ) + $a->duracion * 86400),
+					"duracion" => $a->duracion 
+			), array (
+					"id" => $articulo 
+			) );
+		}
 		if ($this->db->update ( "articulo", array (
-				"fecha_registro" => date ( "Y-m-d H:i:s" ) 
+				"fecha_registro" => $ahora 
 		), array (
 				"id" => $articulo 
 		) )) {
@@ -2555,6 +2567,9 @@ class Articulo_model extends CI_Model {
 						$CI = &get_instance ();
 						$a->comprador = $oferta->usuario;
 						$pid = $this->adicionarPaqueteSimilar ( $a );
+						$this->db->delete ( "tmp_busqueda", array (
+								"id" => $articulo 
+						) );
 						return $this->db->update ( "articulo", array (
 								"paquete" => $pid,
 								"estado" => "Sin Pago",
@@ -2754,7 +2769,6 @@ class Articulo_model extends CI_Model {
 		return 2;
 	}
 	public function finalizar($articulo, $estado = false, $transaccion = false) {
-		$this->resetTemporal ();
 		if (! $transaccion) {
 			$a = $this->darArticulo ( $articulo );
 			if ($a) {
@@ -2787,6 +2801,9 @@ class Articulo_model extends CI_Model {
 							"id" => $articulo 
 					) );
 				}
+				$this->db->delete ( "tmp_busqueda", array (
+						"id" => $articulo 
+				) );
 			}
 		} else {
 			$this->db->update ( "transaccion", array (
@@ -2998,6 +3015,7 @@ class Articulo_model extends CI_Model {
 		return $res;
 	}
 	public function prepararConsultaArticuloXCriterioFecha($criterio = false, $tipo = false, $orden = false, $ubicacion = false, $categoria = false, $idioma = false, $usuario = false) {
+		$orden = $orden ? $orden : "ultimos";
 		$tiempo = time ();
 		if (trim ( $orden ) === "" && $usuario) {
 			$orden = "finaliza";
@@ -3055,49 +3073,42 @@ class Articulo_model extends CI_Model {
 				$wextra .= "categoria in(" . implode ( ",", $ids ) . ")";
 			}
 		}
+		//$orderby="";
+		$orderby = "ORDER BY fecha_registro desc";
+		switch ($orden) {
+			case "finaliza" :
+				$orderby = "ORDER BY tiempo asc";
+				break;
+			case "mas-alto" :
+				$orderby = "ORDER BY precio desc";
+				break;
+			case "mas-bajo" :
+				$orderby = "ORDER BY precio asc";
+				break;
+		}
 		$wextra = $wextra ? "where $wextra" : "";
-		$nameBD = $this->crearTemporal ( $orden );
-		$query = "select * from $nameBD $wextra";
+		$nameBD = $this->crearTemporal ();
+		$query = "select * from $nameBD $wextra $orderby";
 		return $query;
 	}
-	public function crearTemporal($orden) {
-		$orden = $orden ? $orden : "ultimos";
-		$nameBD = "tmp_busqueda_" . normalizarTexto ( $orden );
+	public function crearTemporal() {
+		$nameBD = "tmp_busqueda";
 		$res = @$this->db->query ( "select 1 from $nameBD limit 1" );
 		if (! $res) {
 			
-			$precio = "articulo.precio";
-			$orderby = "ORDER BY fecha_registro desc";
-			$adicionalSelect = "";
+			$precio = "if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
 			$extra = "";
-			
-			$adicionaInsert = "";
-			$adicionaCreate = "";
-			switch ($orden) {
-				case "finaliza" :
-					$orderby = "ORDER BY tiempo asc";
-					$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
-					$adicionalSelect = ",if(articulo.tipo='Fijo' or articulo.tipo='Cantidad',unix_timestamp(articulo.fecha_registro-now())+$vencimientoOferta ,unix_timestamp(articulo.fecha_registro- unix_timestamp())+articulo.duracion*86400 )as tiempo";
-					$adicionaCreate = "tiempo bigint null,";
-					$adicionaInsert = ",tiempo";
-					break;
-				case "mas-alto" :
-					$precio = "if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
-					$orderby = "ORDER BY precio desc";
-					break;
-				case "mas-bajo" :
-					$precio = "if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
-					$orderby = "ORDER BY precio asc";
-					break;
-			}
+			$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
+			$adicionalSelect = ",if(articulo.tipo='Fijo' or articulo.tipo='Cantidad',unix_timestamp(articulo.fecha_registro)+$vencimientoOferta ,unix_timestamp(articulo.fecha_registro)+articulo.duracion*86400 )as tiempo";
+			$adicionaCreate = "tiempo bigint null,";
+			$adicionaInsert = ",tiempo";
 			$query = "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,$precio ,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto, pais.nombre as pais_nombre, ciudad.nombre as ciudad_nombre, articulo.categoria as categoria,pais.codigo3,pais.continente $adicionalSelect
 			FROM (articulo)
 			INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.estado<>'Baneado'
 			INNER JOIN pais ON pais.codigo3=usuario.pais
 			INNER JOIN ciudad ON ciudad.id=usuario.ciudad
 			WHERE terminado = 0 and articulo.estado<>'Baneado'
-			$extra
-			$orderby";
+			$extra";
 			
 			$res = $this->db->query ( "CREATE  TABLE $nameBD(
 					cantidad int(10) NOT NULL,
@@ -3128,7 +3139,7 @@ class Articulo_model extends CI_Model {
 	public function listarArticulosXCriterioFecha($criterio = false, $tipo = false, $orden = false, $ubicacion = false, $categoria = false, $idioma = false, $usuario = false, $inicio = 0, $total = 10) {
 		$tiempo = time ();
 		$query = $this->prepararConsultaArticuloXCriterioFecha ( $criterio, $tipo, $orden, $ubicacion, $categoria, $idioma, $usuario );
-		$lquery = "$query limit $inicio," . ($inicio + $total);
+		$lquery = "$query limit $inicio," . $total;
 		$cquery = "select count(id) as total from ($query) as x;";
 		$res = $this->db->query ( $lquery );
 		if (is_object ( $res )) {
@@ -3782,16 +3793,10 @@ class Articulo_model extends CI_Model {
 		return $data2;
 	}
 	public function resetTemporal() {
-		$this->db->query ( "drop table tmp_busqueda_finaliza" );
-		$this->db->query ( "drop table tmp_busqueda_mas_alto" );
-		$this->db->query ( "drop table tmp_busqueda_mas_bajo" );
-		$this->db->query ( "drop table tmp_busqueda_ultimos" );
+		$this->db->query ( "drop table tmp_busqueda" );
 	}
 	public function llenarTemporal() {
-		$this->crearTemporal ( "finaliza" );
-		$this->crearTemporal ( "mas_alto" );
-		$this->crearTemporal ( "mas_bajo" );
-		$this->crearTemporal ( "ultimos" );
+		$this->crearTemporal ();
 	}
 }
 ?>

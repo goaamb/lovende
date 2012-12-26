@@ -714,24 +714,16 @@ class Servicio {
 		$this->CI->load->model ( "usuario_model", "usuario" );
 		$this->CI->load->library ( "myemail" );
 		$i = 0;
-		$t = 5000;
-		do {
-			if (isset($articulos)) {
-				unset ( $articulos );
-			}
-			$articulos = $this->CI->articulo->listarArticulosPendientes ( $i, $t );
-			$this->procesarPendientes ( $articulos );
-			$i += $t;
-		} while ( is_array ( $articulos ) && count ( $articulos ) > 0 );
+		$t = 10000;
+		$articulos = $this->CI->articulo->listarArticulosPendientes ( $i, $t );
+		$this->procesarPendientes ( $articulos );
 	}
 	public function procesarPendientes($articulos) {
 		if (is_array ( $articulos ) && count ( $articulos ) > 0) {
 			$ahora = time ();
 			foreach ( $articulos as $articulo ) {
-				print $articulo->tipo . "\n";
 				if ($articulo->tipo == "Subasta") {
 					$tiempo = strtotime ( $articulo->fecha_registro ) + $articulo->duracion * 86400;
-					print ($tiempo - $ahora) . "\n";
 					if ($tiempo <= $ahora) {
 						$this->reMapOfertas ( array (
 								$articulo->id 
@@ -777,7 +769,6 @@ class Servicio {
 				} else {
 					$this->CI->load->library ( "configuracion" );
 					$tiempo = strtotime ( $articulo->fecha_registro ) + intval ( $this->CI->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
-					print ($tiempo - $ahora) . "\n";
 					if ($tiempo <= $ahora) {
 						if ($this->CI->articulo->actualizarPublicacion ( $articulo->id )) {
 							print "[" . date ( "Y-m-d H:i:s" ) . "] - Cambiando la fecha de publicacion del articulo: $articulo->id - $articulo->titulo\n";
@@ -1066,7 +1057,10 @@ class Servicio {
 		print "Remapping Temporales\n";
 		$this->CI->db->reconnect ();
 		$this->CI->load->model ( "articulo_model", "articulo" );
+		print date ( "Y-m-d H:i:s" ) . " - Inicio\n";
+		$this->CI->articulo->resetTemporal ();
 		$this->CI->articulo->llenarTemporal ();
+		print date ( "Y-m-d H:i:s" ) . " - Fin\n";
 	}
 	function reMapOfertas($params = false) {
 		print "Remapping\n";

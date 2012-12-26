@@ -149,7 +149,7 @@ google_ad_height = 90;
 									<?=(($this->input->get("usuario")?"":$this->input->get("criterio"))?"style='display:block';":"")?>
 									onclick="resetBusqueda();">x</span>
 							</p>
-							<input type="button" class="bt" value="Buscar" />
+							<input type="submit" class="bt" value="Buscar" />
 						</form>
 					</div>
 				</div>

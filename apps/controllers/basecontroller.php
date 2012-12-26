@@ -10,7 +10,7 @@ class BaseController extends CI_Controller {
 	public $pais = false;
 	public function __construct() {
 		parent::__construct ();
-
+		
 		$this->load->database ();
 		$this->load->library ( "mysession" );
 		$this->load->library ( "configuracion" );
@@ -18,17 +18,17 @@ class BaseController extends CI_Controller {
 		$this->tipoUbicacion = $this->configuracion->variables ( "tipoUbicacion" );
 		$this->load->model ( "locacion_model", "locacion" );
 		$this->load->model ( "idioma_model", "idioma_model" );
-
-		if ($this->tipoUbicacion == "dominio") {
+		
+		if ($this->tipoUbicacion == "dominio" && isset ( $_SERVER ["SERVER_NAME"] )) {
 			$this->dominio = array_pop ( explode ( ".", $_SERVER ["SERVER_NAME"] ) );
 			$this->dominio = $this->dominio ? $this->dominio : "com";
 		}
-
+		
 		$this->pais = $this->locacion->darPaisDominio ( $this->dominio );
 		if (! $this->pais) {
 			$this->pais = $this->locacion->darPaisDominio ( "us" );
 		}
-
+		
 		$lg = "es-ES";
 		if ($this->pais) {
 			$lenguaje = $this->idioma_model->darLenguajeXPais ( $this->pais->codigo2 );
@@ -39,13 +39,13 @@ class BaseController extends CI_Controller {
 		if (! $this->mysession->userdata ( "lg" )) {
 			$this->mysession->set_userdata ( "lg", $lg );
 		}
-
+		
 		$this->load->library ( "idioma" );
 		$auxp = "paisReal" . $this->idioma->darIP ();
 		if (! $this->mysession->userdata ( $auxp )) {
 			$this->idioma->darCodigo2AlfaPais ( $this->idioma->darIP () );
 		}
-
+		
 		if ($this->mysession->userdata ( $auxp )) {
 			$this->pais = $this->locacion->darPaisCodigo2 ( $this->mysession->userdata ( $auxp ) );
 		}
@@ -53,15 +53,15 @@ class BaseController extends CI_Controller {
 		if (isset ( $this->idioma ) && $this->idioma) {
 			$this->idioma->darLenguaje ();
 		}
-
+		
 		$this->load->helper ( 'url' );
 		$this->load->helper ( 'idioma' );
-
+		
 		$this->facebook_url = "https://www.facebook.com/dialog/oauth?client_id=350662618351362&scope=email,read_stream&redirect_uri=" . base_url () . "facebook/connect/";
 		if (isset ( $this->mysession ) && $this->mysession) {
 			$this->isLogged ();
 		}
-
+		
 		$this->predata = $this->process ();
 	}
 	public function index($noview = false) {
@@ -111,7 +111,7 @@ class BaseController extends CI_Controller {
 		}
 		$header = array_merge ( array (
 				"logged" => ($this->myuser !== false),
-				"usuario" => $this->myuser
+				"usuario" => $this->myuser 
 		), $header );
 		if ($this->predata) {
 			$data = array_merge ( $data, $this->predata );
@@ -125,7 +125,7 @@ class BaseController extends CI_Controller {
 		} elseif (! $view) {
 			$view = $df;
 		}
-
+		
 		if (! isset ( $data )) {
 			$data = array ();
 		}
@@ -166,7 +166,7 @@ class BaseController extends CI_Controller {
 	}
 	public function process() {
 		$data = array (
-				"facebook_url" => $this->facebook_url
+				"facebook_url" => $this->facebook_url 
 		);
 		return $data;
 	}

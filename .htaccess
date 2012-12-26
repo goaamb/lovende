@@ -1,27 +1,15 @@
-SetEnv PHPRC /home/romualdf/sandbox/lovende/php.ini
+SetEnv PHPRC /home/lovende/public_html/php.ini
 <IfModule mod_security.c>
 SecFilterEngine Off
 SecFilterScanPOST Off
 SecFilterInheritance Off
 </IfModule>
- <IfModule mod_rewrite.c>
- Options +FollowSymLinks
+<IfModule mod_rewrite.c>
+Options +FollowSymLinks
 RewriteEngine On
 RewriteBase /
 
-	RewriteCond %{HTTP_HOST} ^lovende.com$ [NC]
-    RewriteRule ^(.*)$ http://www.lovende.es/$1 [R=301,L]
-    
-    RewriteCond %{HTTP_HOST} ^sandbox.lovende.com$ [NC]
-    RewriteCond %{REMOTE_ADDR} !^200.58.81.157
-    RewriteCond %{REMOTE_ADDR} !^88.16.228.206
-    RewriteCond %{REMOTE_ADDR} !^88.16.225.70
-    RewriteRule ^(.*)$ http://www.lovende.es/$1 [R=301,L]
- 
-    RewriteCond %{HTTP_HOST} ^sandbox.lovende.nakoko.com$ [NC]
-    RewriteCond %{REMOTE_ADDR} !^200.58.81.157
-    RewriteCond %{REMOTE_ADDR} !^88.16.228.206
-    RewriteCond %{REMOTE_ADDR} !^88.16.225.70
+    RewriteCond %{HTTP_HOST} ^lovende.es$ [NC]
     RewriteRule ^(.*)$ http://www.lovende.es/$1 [R=301,L]
     
     RewriteCond %{REQUEST_URI} ^kernel.*

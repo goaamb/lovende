@@ -24,7 +24,7 @@
 			<cantidadVendidos>10</cantidadVendidos>
 		</paginacion>
 		<ubicacion>
-			<tipo>defecto</tipo>
+			<tipo>dominio</tipo>
 			<detalle><![CDATA[En esta seccion hay 2 tipos por: dominio y defecto]]></detalle>
 		</ubicacion>
 		<paypal>

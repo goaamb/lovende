@@ -365,6 +365,8 @@ class Home extends BaseController {
 				$r ++;
 			} while ( trim ( $celda ) !== "" );
 			if ($count > 0) {
+				$this->articulo->resetTemporal ();
+				$this->articulo->llenarTemporal ();
 				$data ["Mensaje"] = "Se importaron $count Artículos";
 			} else {
 				$data ["Error"] = "No se importo ningun Artículo";
@@ -1089,8 +1091,8 @@ class Home extends BaseController {
 			$action = array_shift ( $uri );
 			$pagina = intval ( $this->input->get ( "pagina" ) );
 			$pagina = $pagina >= 1 ? $pagina : 1;
-			if(isset($_GET["lang"])){
-				unset($_GET["lang"]);
+			if (isset ( $_GET ["lang"] )) {
+				unset ( $_GET ["lang"] );
 			}
 			if ($uri || $section || $action || count ( $_GET ) > 0) {
 				$data = array_merge ( $this->articulo->leerArticulos ( $pagina, $this->input->get ( "criterio" ), $action, $this->input->get ( "orden" ), $this->input->get ( "ubicacion" ), $this->input->get ( "categoria" ), $this->idioma->language->id ), array (

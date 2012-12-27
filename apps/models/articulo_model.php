@@ -1520,10 +1520,10 @@ class Articulo_model extends CI_Model {
 				$orderby = "time";
 				$asc = "desc";
 			}
-			
 			$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
 			$sextra = "";
 			$fextra = "";
+			$precio = "articulo.precio";
 			switch ($orderby) {
 				case "follower" :
 					$orderby = "seguidores";
@@ -1533,11 +1533,11 @@ class Articulo_model extends CI_Model {
 					$sextra .= ",(select count(oferta.id) from oferta inner join usuario on usuario.id=oferta.usuario and usuario.estado<>'Baneado' where articulo.id=oferta.articulo) as nOfertas";
 					break;
 				case "price" :
-					$sextra .= ",if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
+					$precio = "if(articulo.tipo<>'Subasta',articulo.precio,mayorPuja(articulo.id)) as precio";
 					$orderby = "precio";
 					break;
 				default :
-					$sextra .= ",if(articulo.tipo='Fijo',unix_timestamp(articulo.fecha_registro)+ $vencimientoOferta - unix_timestamp(),unix_timestamp(articulo.fecha_registro)+articulo.duracion*86400 - unix_timestamp())as tiempo";
+					$sextra .= ",if(articulo.tipo<>'Subasta',unix_timestamp(articulo.fecha_registro)+ $vencimientoOferta ,unix_timestamp(articulo.fecha_registro)+articulo.duracion*86400)as tiempo";
 					$orderby = "tiempo";
 					break;
 			}
@@ -1555,7 +1555,7 @@ class Articulo_model extends CI_Model {
 			} else {
 				$sextra .= ",(select count(oferta.id) from oferta inner join usuario on usuario.id=oferta.usuario and usuario.estado<>'Baneado' where oferta.articulo=articulo.id and oferta.estado='Pendiente') as ofertasPendientes";
 			}
-			return "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,articulo.precio,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,(select count(siguiendo.id) from siguiendo where siguiendo.articulo=articulo.id) as seguidores $sextra
+			return "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,$precio,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,(select count(siguiendo.id) from siguiendo where siguiendo.articulo=articulo.id) as seguidores $sextra
 			FROM articulo
 			INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
 			$fextra
@@ -1744,20 +1744,18 @@ class Articulo_model extends CI_Model {
 	}
 	public function listarArticulosXEnVentaFecha($usuario, $new = false, $inicio, $total) {
 		$query = $this->prepararArticulosXEnVentaFecha ( $usuario, $new );
-		$res = $this->db->query ( $query );
+		$res = $this->db->query ( "$query limit $inicio,$total" );
 		if ($res) {
-			$totalRes = $res->num_rows ();
-			if ($inicio < $totalRes) {
-				$total = ($totalRes < $inicio + $total) ? $totalRes - $inicio : $total;
-				$datos = array ();
-				for($i = $inicio; $i < $inicio + $total; $i ++) {
-					$datos [] = $res->row ( $i );
-				}
-				return array (
-						$totalRes,
-						$datos 
-				);
+			$totalRes = 0;
+			$tRes = $this->db->query ( "select count(1) as total from ($query) as x " )->result ();
+			if (is_array ( $tRes ) && count ( $tRes ) > 0) {
+				$totalRes = $tRes [0]->total;
 			}
+			$datos = $res->result ();
+			return array (
+					$totalRes,
+					$datos 
+			);
 		}
 		return false;
 	}
@@ -1873,7 +1871,6 @@ class Articulo_model extends CI_Model {
 		if (! $inicio) {
 			$inicio = 0;
 		}
-		
 		$data ["inicio"] = $inicio;
 		$data ["totalpagina"] = $totalpagina;
 		$data ["finalEnVenta"] = 0;
@@ -3073,7 +3070,7 @@ class Articulo_model extends CI_Model {
 				$wextra .= "categoria in(" . implode ( ",", $ids ) . ")";
 			}
 		}
-		//$orderby="";
+		// $orderby="";
 		$orderby = "ORDER BY fecha_registro desc";
 		switch ($orden) {
 			case "finaliza" :

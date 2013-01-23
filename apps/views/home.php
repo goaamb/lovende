@@ -5,6 +5,7 @@ if (! $cmh) {
 	?>
 	<section id="welcome-warning" class="clearfix">
 		<header>
+
 			<h1><?=traducir("Bienvenido a Lovende");?></h1>
 			<h2><?=traducir("Compra y vende por subasta y precio fijo");?></h2>
 		</header>

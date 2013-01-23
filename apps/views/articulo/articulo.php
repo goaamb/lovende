@@ -79,15 +79,17 @@ if (! $baneado || $visible) {
 		<div class="gallery">
 			<div id="productGallery">
 				<ul><?php
-	foreach ( $imagenes as $ima ) {
+	foreach ( $imagenes as $i=>$ima ) {
+		$i++;
 		if (is_file ( $file . $ima )) {
-			?><li><div style=" background:transparent url(<?=$ruta.$ima?>) center center no-repeat scroll;width:640px; height: 480px;"></div></li><?php
+			?><li title="<?=$articulo->titulo."-$i"?>"><div style=" background:transparent url(<?=$ruta.$ima?>) center center no-repeat scroll;width:640px; height: 480px;"></div></li><?php
 		}
 	}
 	?></ul><?php
-	foreach ( $imagenes as $ima ) {
+	foreach ( $imagenes as $i=>$ima ) {
+		$i++;
 		if (is_file ( $file . $ima )) {
-			?><img src="<?=$ruta.$ima?>" alt="<?=$articulo->titulo?>"
+			?><img src="<?=$ruta.$ima?>" alt="<?=$articulo->titulo."-$i"?>"
 					style="display: none;" /><?php
 		}
 	}
@@ -506,7 +508,5 @@ if (! $baneado || $visible) {
 	$this->load->view ( "articulo/no-existe");
 }
 ?>
-
-
 
 

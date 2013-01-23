@@ -23,8 +23,7 @@ function enviarmensaje(id)
 		
 			success:function(res)
 			{
-				//alert("Hola");
-				
+				$(".nyroModalClose").click();
 			}
 		
 		  });
@@ -51,7 +50,7 @@ function enviarmensaje(id)
 			</div><!--wrap-->
 			<footer>
 				<p class="actions">
-					<input type="submit" class="bt" value="Enviar" onclick="enviarmensaje('<?php echo $id;?>')"/>
+					<input type="button" class="bt" value="Enviar" onclick="enviarmensaje('<?php echo $id;?>')"/>
 					<span class="mhm">o</span>
 					<a class="nyroModalClose">cancelar</a>
 				</p>

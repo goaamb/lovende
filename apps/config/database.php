@@ -37,9 +37,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db ['default'] ['hostname'] = 'localhost';
-$db ['default'] ['username'] = 'romualdf_lovende';
-$db ['default'] ['password'] = 'dev02host';
-$db ['default'] ['database'] = 'romualdf_lovende_sand';
+$db ['default'] ['username'] = 'lovende_produc';
+$db ['default'] ['password'] = '70V3ND3.35';
+$db ['default'] ['database'] = 'lovende_produccion';
 $db ['default'] ['dbdriver'] = 'mysql';
 $db ['default'] ['dbprefix'] = '';
 $db ['default'] ['pconnect'] = false;

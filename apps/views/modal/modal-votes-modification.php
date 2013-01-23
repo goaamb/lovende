@@ -29,8 +29,7 @@ function buscarvotos(id,positivo,negativo)
 		
 			success:function(res)
 			{
-				//alert("Hola");
-				
+				location.href=location.href.split("#").shift();
 			}
 		
 		  });
@@ -84,7 +83,7 @@ function buscarvotos(id,positivo,negativo)
 			</div><!--wrap-->
 			<footer>
 				<p class="actions">
-					<input type="submit" class="bt" value="Send" onclick="buscarvotos('<?php echo $id."','".$posi."','".$neg;?>')">
+					<input type="button" class="bt" value="Send" onclick="buscarvotos('<?php echo $id."','".$posi."','".$neg;?>')">
 					<span class="mhm">or</span>
 					<a class="nyroModalClose">cancel</a>
 				</p>

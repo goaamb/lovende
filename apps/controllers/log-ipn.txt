@@ -1,3 +1,258 @@
+[2013-01-19 07:52:04]
+Array
+(
+    [payment_request_date] => Sat Jan 19 06:46:16 PST 2013
+    [return_url] => http://www.lovende.es/paypal/success?codigo=53
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => iruneki@euskaltel.net
+    [verify_sign] => AiPC9BjkCyDFQXbSkoZcgqH3hpacASV9tBd4Nn513FUfVog4kOMMjt16
+    [transaction] => Array
+        (
+            [0] => EUR 30.82
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [pay_key] => AP-55E39475TC3604801
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+Array
+(
+    [/paypal/ipnResponse] => 
+    [payment_request_date] => Sat Jan 19 06:46:16 PST 2013
+    [return_url] => http://www.lovende.es/paypal/success?codigo=53
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => iruneki@euskaltel.net
+    [verify_sign] => AiPC9BjkCyDFQXbSkoZcgqH3hpacASV9tBd4Nn513FUfVog4kOMMjt16
+    [transaction] => Array
+        (
+            [0] => EUR 30.82
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [pay_key] => AP-55E39475TC3604801
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+[2013-01-07 18:51:30]
+Array
+(
+    [payment_request_date] => Wed Dec 12 17:06:06 PST 2012
+    [return_url] => http://www.lovende.es/paypal/success?codigo=40
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => desdemeknes@hotmail.com
+    [verify_sign] => AQU0e5vuZCvSg-XJploSa.sGUDlpA09CxWM1qO2v4F8kXQDOTPucUxic
+    [transaction] => Array
+        (
+            [0] => EUR 15.10
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [reason_code] => CLEARED
+    [pay_key] => AP-5813120862490970N
+    [action_type] => PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+Array
+(
+    [/paypal/ipnResponse] => 
+    [payment_request_date] => Wed Dec 12 17:06:06 PST 2012
+    [return_url] => http://www.lovende.es/paypal/success?codigo=40
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => desdemeknes@hotmail.com
+    [verify_sign] => AQU0e5vuZCvSg-XJploSa.sGUDlpA09CxWM1qO2v4F8kXQDOTPucUxic
+    [transaction] => Array
+        (
+            [0] => EUR 15.10
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [reason_code] => CLEARED
+    [pay_key] => AP-5813120862490970N
+    [action_type] => PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+[2013-01-07 18:47:56]
+Array
+(
+    [payment_request_date] => Wed Dec 12 17:06:56 PST 2012
+    [return_url] => http://www.lovende.es/paypal/success?codigo=39
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => desdemeknes@hotmail.com
+    [verify_sign] => An5ns1Kso7MWUdW4ErQKJJJ4qi4-ACmJi.EspgNyqrBj-x6s-l5dmSp6
+    [transaction] => Array
+        (
+            [0] => EUR 95.00
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [reason_code] => CLEARED
+    [pay_key] => AP-2K571318B1588444J
+    [action_type] => PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+Array
+(
+    [/paypal/ipnResponse] => 
+    [payment_request_date] => Wed Dec 12 17:06:56 PST 2012
+    [return_url] => http://www.lovende.es/paypal/success?codigo=39
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => desdemeknes@hotmail.com
+    [verify_sign] => An5ns1Kso7MWUdW4ErQKJJJ4qi4-ACmJi.EspgNyqrBj-x6s-l5dmSp6
+    [transaction] => Array
+        (
+            [0] => EUR 95.00
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [reason_code] => CLEARED
+    [pay_key] => AP-2K571318B1588444J
+    [action_type] => PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+[2013-01-04 12:05:25]
+Array
+(
+    [payment_request_date] => Fri Jan 04 11:03:39 PST 2013
+    [return_url] => http://www.lovende.es/paypal/success?codigo=44
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => fumagalli.giovanni@teletu.it
+    [verify_sign] => A21kmBLyRcQpDSjYvmswlm3ckjahAdVXtAi5XoKRfottG0Aut28xJ9hk
+    [transaction] => Array
+        (
+            [0] => EUR 24.50
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [pay_key] => AP-8J843342MR9386344
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+Array
+(
+    [/paypal/ipnResponse] => 
+    [payment_request_date] => Fri Jan 04 11:03:39 PST 2013
+    [return_url] => http://www.lovende.es/paypal/success?codigo=44
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => fumagalli.giovanni@teletu.it
+    [verify_sign] => A21kmBLyRcQpDSjYvmswlm3ckjahAdVXtAi5XoKRfottG0Aut28xJ9hk
+    [transaction] => Array
+        (
+            [0] => EUR 24.50
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [pay_key] => AP-8J843342MR9386344
+    [action_type] => PAY
+    [transaction_type] => Adaptive Payment PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+[2013-01-02 23:07:42]
+Array
+(
+    [payment_request_date] => Sun Dec 09 17:25:21 PST 2012
+    [return_url] => http://www.lovende.es/paypal/success?codigo=35
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => quinero@coac.net
+    [verify_sign] => AQU0e5vuZCvSg-XJploSa.sGUDlpA77s2T4uExC3M4EdKc6Wkz9KGGOU
+    [transaction] => Array
+        (
+            [0] => EUR 14.90
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [reason_code] => CLEARED
+    [pay_key] => AP-2DE2548052219415C
+    [action_type] => PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
+Array
+(
+)
+Array
+(
+    [/paypal/ipnResponse] => 
+    [payment_request_date] => Sun Dec 09 17:25:21 PST 2012
+    [return_url] => http://www.lovende.es/paypal/success?codigo=35
+    [fees_payer] => EACHRECEIVER
+    [ipn_notification_url] => http://www.lovende.es/paypal/ipnResponse
+    [sender_email] => quinero@coac.net
+    [verify_sign] => AQU0e5vuZCvSg-XJploSa.sGUDlpA77s2T4uExC3M4EdKc6Wkz9KGGOU
+    [transaction] => Array
+        (
+            [0] => EUR 14.90
+        )
+
+    [cancel_url] => http://www.lovende.es/paypal/cancel
+    [reason_code] => CLEARED
+    [pay_key] => AP-2DE2548052219415C
+    [action_type] => PAY
+    [status] => COMPLETED
+    [log_default_shipping_address_in_transaction] => false
+    [charset] => windows-1252
+    [notify_version] => UNVERSIONED
+    [reverse_all_parallel_payments_on_error] => false
+)
 [2012-12-06 15:19:49]
 Array
 (

@@ -1,3 +1,81 @@
+[2013-01-21 10:12:12] - COMPLETO
+[2013-01-21 10:12:12]
+Array
+(
+    [mc_gross] => 7.11
+    [protection_eligibility] => Ineligible
+    [payer_id] => FFPGH74Q7HXKC
+    [tax] => 0.00
+    [payment_date] => 09:12:10 Jan 21, 2013 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => aurelio
+    [mc_fee] => 0.59
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => A5pdRbIOuZ8yJS-myoiXKjzoGcPNA8YyJrq7Ow0n9dguPN0L0pEXSJnB
+    [payer_email] => info@salvatierra12.com
+    [txn_id] => 3D598958M41978030
+    [payment_type] => instant
+    [payer_business_name] => DISTRIBUIDOR  OFICIAL  ROSACE  EUROPA
+    [last_name] => salvatierra lopez
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 11/2012 de Diciembre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 11/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 11/2012 de Diciembre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 5985caa0941e7
+)
+Array
+(
+)
+Array
+(
+    [/paypal/billingPay/23] => 
+    [mc_gross] => 7.11
+    [protection_eligibility] => Ineligible
+    [payer_id] => FFPGH74Q7HXKC
+    [tax] => 0.00
+    [payment_date] => 09:12:10 Jan 21, 2013 PST
+    [payment_status] => Completed
+    [charset] => windows-1252
+    [first_name] => aurelio
+    [mc_fee] => 0.59
+    [notify_version] => 3.7
+    [custom] => 
+    [payer_status] => verified
+    [business] => info@lovende.com
+    [quantity] => 1
+    [verify_sign] => A5pdRbIOuZ8yJS-myoiXKjzoGcPNA8YyJrq7Ow0n9dguPN0L0pEXSJnB
+    [payer_email] => info@salvatierra12.com
+    [txn_id] => 3D598958M41978030
+    [payment_type] => instant
+    [payer_business_name] => DISTRIBUIDOR  OFICIAL  ROSACE  EUROPA
+    [last_name] => salvatierra lopez
+    [receiver_email] => info@lovende.com
+    [payment_fee] => 
+    [receiver_id] => W8HCWU4RVBCK4
+    [txn_type] => web_accept
+    [item_name] => Pago por factura: 11/2012 de Diciembre/2012 en Lovende.com
+    [mc_currency] => EUR
+    [item_number] => 11/2012
+    [residence_country] => ES
+    [handling_amount] => 0.00
+    [transaction_subject] => Pago por factura: 11/2012 de Diciembre/2012 en Lovende.com
+    [payment_gross] => 
+    [shipping] => 0.00
+    [ipn_track_id] => 5985caa0941e7
+)
 [2012-12-01 06:19:51] - COMPLETO
 [2012-12-01 06:19:51]
 Array

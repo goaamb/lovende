@@ -139,6 +139,12 @@
 						$("a", "#" + options.lastId).click(function() {
 							animate("last", true);
 						});
+						var allO=$("li",obj);
+						var title=$(allO[0]).attr("title");
+						$("a", "#" + options.nextId).attr("title",title);
+						$("a", "#" + options.lastId).attr("title",title);
+						$("a", "#" + options.nextId).attr("title",title);
+						$("a", "#" + options.lastId).attr("title",title);
 					}
 					;
 
@@ -200,6 +206,12 @@
 									duration : speed,
 									complete : adjust
 								});
+								var allO=$("li",obj);
+								var title=$(allO[t]).attr("title");
+								$("a", "#" + options.nextId).attr("title",title);
+								$("a", "#" + options.lastId).attr("title",title);
+								$("a", "#" + options.nextId).attr("title",title);
+								$("a", "#" + options.lastId).attr("title",title);
 							} else {
 								p = (t * h * -1);
 								$("ul", obj).animate({

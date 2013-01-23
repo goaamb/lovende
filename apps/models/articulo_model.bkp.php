@@ -35,15 +35,15 @@ class Articulo_model extends CI_Model {
 	public function listarSeguimientosPorFinalizar($tiempo) {
 		$tiempo = intval ( $tiempo ) * 3600;
 		$sql = "select s.id as seguimiento,u.seudonimo,u.email,a.id,a.titulo from (select id,titulo,
-				if(tipo='Subasta',
-				duracion*86400+unix_timestamp(fecha_registro-unix_timestamp())
-				," . $this->configuracion->variables ( "vencimientoOferta" ) . "*86400-(unix_timestamp()-unix_timestamp(fecha_registro))) as tiempo
-				From articulo
-				where terminado=0
-				having tiempo<= $tiempo ) as a
-				inner join siguiendo as s on a.id=s.articulo and s.notificado='No'
-				inner join usuario as u on u.id=s.usuario
-				order by u.email asc,a.titulo asc,a.id asc";
+                        if(tipo='Subasta',
+                        duracion*86400+unix_timestamp(fecha_registro-unix_timestamp())
+                        ," . $this->configuracion->variables ( "vencimientoOferta" ) . "*86400-(unix_timestamp()-unix_timestamp(fecha_registro))) as tiempo
+            From articulo
+            where terminado=0
+            having tiempo<= $tiempo ) as a
+            inner join siguiendo as s on a.id=s.articulo and s.notificado='No'
+            inner join usuario as u on u.id=s.usuario
+            order by u.email asc,a.titulo asc,a.id asc";
 		return $this->db->query ( $sql )->result ();
 	}
 	public function modificarCantidad($a) {
@@ -132,7 +132,7 @@ class Articulo_model extends CI_Model {
 				from articulo
 				where articulo.id in ( $articulos ) order by articulo.titulo asc";
 			} else {
-				$sql = "select * from((select
+				$sql = "select * from((select 
 				articulo.titulo as titulo,
 				articulo.precio as precio,
 				articulo.id as articulo,
@@ -143,8 +143,8 @@ class Articulo_model extends CI_Model {
 				articulo.usuario as usuario
 				from articulo
 				where articulo.id in ( $articulos ) and articulo.tipo='Subasta' and articulo.usuario='$usuario->id')
-				union
-				(select
+				union 
+				(select 
 				articulo.titulo as titulo,
 				if(articulo.precio_oferta,articulo.precio_oferta,articulo.precio) as precio,
 				articulo.id as articulo,
@@ -157,7 +157,7 @@ class Articulo_model extends CI_Model {
 				where articulo.tipo<>'Subasta' and articulo.usuario='$usuario->id'
 				)
 				union
-				(select
+				(select 
 				articulo.titulo as titulo,
 				articulo.precio as precio,
 				articulo.id as articulo,
@@ -232,20 +232,8 @@ class Articulo_model extends CI_Model {
 		return $this->darTodos ( "articulo" );
 	}
 	public function actualizarPublicacion($articulo) {
-		$ahora = date ( "Y-m-d H:i:s" );
-		$a = $this->darArticulo ( $articulo );
-		if ($a) {
-			$a->duracion = $a->duracion ? $a->duracion : $this->configuracion->variables ( "vencimientoOferta" );
-			$this->db->update ( "tmp_busqueda", array (
-					"fecha_registro" => $ahora,
-					"tiempo" => ($a->tipo != 'Subasta' ? strtotime ( $a->fecha_registro ) + $this->configuracion->variables ( "vencimientoOferta" ) * 86400 : strtotime ( $a->fecha_registro ) + $a->duracion * 86400),
-					"duracion" => $a->duracion 
-			), array (
-					"id" => $articulo 
-			) );
-		}
 		if ($this->db->update ( "articulo", array (
-				"fecha_registro" => $ahora 
+				"fecha_registro" => date ( "Y-m-d H:i:s" ) 
 		), array (
 				"id" => $articulo 
 		) )) {
@@ -411,7 +399,7 @@ class Articulo_model extends CI_Model {
 			$monto += $this->calcularTarifa ( false, "Plana", $usuario->id );
 		}
 		$nc = 0;
-		$r = $this->db->query ( "SELECT cast(substr(codigo,1,length(codigo)-5) as unsigned integer) as nc from factura where substr(codigo,length(codigo)-3)='$anio' order by nc desc" )->result ();
+		$r = $this->db->query ( "SELECT substr(codigo,1,length(codigo)-5) as nc from factura where substr(codigo,length(codigo)-3)='$anio' order by codigo desc limit 0,1" )->result ();
 		if ($r && is_array ( $r ) && count ( $r ) > 0) {
 			$nc = intval ( $r [0]->nc );
 		}
@@ -724,12 +712,12 @@ class Articulo_model extends CI_Model {
 	}
 	function totalVentas($usuario) {
 		$sql = "select sum(total) as  total from (
-		(select count(total) as total from (SELECT count(id) as total  FROM `articulo` WHERE usuario='$usuario' and estado in('Sin gastos Envio','Sin Envio') group by paquete)as x)
-		union
-		(select count(total) as total from (SELECT count(transaccion.id) as total FROM `transaccion` inner join articulo on articulo.id=transaccion.articulo WHERE articulo.usuario='$usuario' and transaccion.estado in('Sin gastos Envio','Sin Envio') group by transaccion.paquete)as z)
-		union
-		(SELECT count(oferta.id)as total FROM `oferta` inner join articulo on articulo.id=oferta.articulo and  articulo.usuario='$usuario' and articulo.tipo='Fijo' and articulo.terminado=0 where oferta.estado='Pendiente')
-		)as y";
+(select count(total) as total from (SELECT count(id) as total  FROM `articulo` WHERE usuario='$usuario' and estado in('Sin gastos Envio','Sin Envio') group by paquete)as x)
+union
+(select count(total) as total from (SELECT count(transaccion.id) as total FROM `transaccion` inner join articulo on articulo.id=transaccion.articulo WHERE articulo.usuario='$usuario' and transaccion.estado in('Sin gastos Envio','Sin Envio') group by transaccion.paquete)as z)
+            union
+(SELECT count(oferta.id)as total FROM `oferta` inner join articulo on articulo.id=oferta.articulo and  articulo.usuario='$usuario' and articulo.tipo='Fijo' and articulo.terminado=0 where oferta.estado='Pendiente')
+            )as y";
 		$r = $this->db->query ( $sql )->result ();
 		if ($r && is_array ( $r ) && count ( $r ) > 0) {
 			return $r [0]->total;
@@ -738,10 +726,10 @@ class Articulo_model extends CI_Model {
 	}
 	function soloPendientes($usuario) {
 		$sql = "select sum(total) as  total from (
-		(select count(total) as total from (SELECT count(id) as total  FROM `articulo` WHERE usuario='$usuario' and estado in('Sin gastos Envio','Sin Envio') group by paquete)as x)
-		union
-		(select count(total) as total from (SELECT count(transaccion.id) as total FROM `transaccion` inner join articulo on articulo.id=transaccion.articulo WHERE articulo.usuario='$usuario' and transaccion.estado in('Sin gastos Envio','Sin Envio') group by transaccion.paquete)as z)
-		)as y";
+            (select count(total) as total from (SELECT count(id) as total  FROM `articulo` WHERE usuario='$usuario' and estado in('Sin gastos Envio','Sin Envio') group by paquete)as x)
+            union
+            (select count(total) as total from (SELECT count(transaccion.id) as total FROM `transaccion` inner join articulo on articulo.id=transaccion.articulo WHERE articulo.usuario='$usuario' and transaccion.estado in('Sin gastos Envio','Sin Envio') group by transaccion.paquete)as z)
+            )as y";
 		$r = $this->db->query ( $sql )->result ();
 		if ($r && is_array ( $r ) && count ( $r ) > 0) {
 			return $r [0]->total;
@@ -754,12 +742,12 @@ class Articulo_model extends CI_Model {
 		$usuarioM = $this->usuarioM->darUsuarioXId ( $usuario );
 		
 		$sql = "select sum(total)as total from ( (select count(id) as total from ((SELECT id FROM `mensaje` WHERE emisor='$usuario' and estado_receptor='Pendiente' and (visible=0 or visible='$usuario')  group by receptor)union(
-		SELECT id FROM `mensaje` WHERE receptor='$usuario' and estado='Pendiente' and (visible=0 or visible='$usuario')   group by emisor
-		))as x)
-		union
-		(select count(id) as total from ((SELECT id FROM `notificacion` WHERE isnull(receptor) and id not in(select notificacion from notificacion_leido where usuario='$usuario' and visible<>0) and fecha>='$usuarioM->registro')
-		union
-		(SELECT id FROM `notificacion` WHERE receptor='$usuario' and id not in(select notificacion from notificacion_leido where usuario='$usuario' and visible<>0) and fecha>='$usuarioM->registro')) as x)) as y";
+SELECT id FROM `mensaje` WHERE receptor='$usuario' and estado='Pendiente' and (visible=0 or visible='$usuario')   group by emisor
+))as x)
+union
+(select count(id) as total from ((SELECT id FROM `notificacion` WHERE isnull(receptor) and id not in(select notificacion from notificacion_leido where usuario='$usuario' and visible<>0) and fecha>='$usuarioM->registro')
+union 
+(SELECT id FROM `notificacion` WHERE receptor='$usuario' and id not in(select notificacion from notificacion_leido where usuario='$usuario' and visible<>0) and fecha>='$usuarioM->registro')) as x)) as y";
 		// print $sql;
 		$r = $this->db->query ( $sql )->result ();
 		if ($r && is_array ( $r ) && count ( $r ) > 0) {
@@ -770,15 +758,15 @@ class Articulo_model extends CI_Model {
 	function totalCompras($usuario) {
 		$sql = "select count(total) as total from (
 
-		select count(id) as total,paquete from(
+select count(id) as total,paquete from(
 
-		(SELECT id,paquete FROM `articulo` WHERE comprador='$usuario' and estado in('Sin Pago','Enviado'))
-		union
-		(SELECT id,paquete FROM `transaccion` WHERE comprador='$usuario' and estado in('Sin Pago','Enviado'))
+(SELECT id,paquete FROM `articulo` WHERE comprador='$usuario' and estado in('Sin Pago','Enviado'))
+union
+(SELECT id,paquete FROM `transaccion` WHERE comprador='$usuario' and estado in('Sin Pago','Enviado'))
 
-		) as x group by paquete
+) as x group by paquete
 
-		) as y;";
+) as y;";
 		// print $sql;
 		$r = $this->db->query ( $sql )->result ();
 		if ($r && is_array ( $r ) && count ( $r ) > 0) {
@@ -788,8 +776,8 @@ class Articulo_model extends CI_Model {
 	}
 	function totalSeguimientos($usuario) {
 		$sql = "select count(id) as total from(select siguiendo.id,if(articulo.tipo='Subasta',articulo.duracion*86400-(unix_timestamp()-unix_timestamp(articulo.fecha_registro))," . $this->configuracion->variables ( "vencimientoOferta" ) . "*86400-(unix_timestamp()-unix_timestamp(articulo.fecha_registro))) as tiempo
-		from siguiendo inner join articulo on siguiendo.articulo=articulo.id where siguiendo.usuario='$usuario' and articulo.terminado=0
-		having tiempo<=" . (floatval ( $this->configuracion->variables ( "notificacionSeguimiento" ) ) * 3600) . " and tiempo>0) as x";
+from siguiendo inner join articulo on siguiendo.articulo=articulo.id where siguiendo.usuario='$usuario' and articulo.terminado=0
+                        having tiempo<=" . (floatval ( $this->configuracion->variables ( "notificacionSeguimiento" ) ) * 3600) . " and tiempo>0) as x";
 		$r = $this->db->query ( $sql )->result ();
 		if ($r && is_array ( $r ) && count ( $r ) > 0) {
 			return $r [0]->total;
@@ -872,78 +860,78 @@ class Articulo_model extends CI_Model {
 					break;
 			}
 			return "select * from ((SELECT
-			null as transaccion,
-			articulo.cantidad,
-			articulo.id,
-			articulo.titulo,
-			articulo.tipo,
-			articulo.fecha_registro,
-			articulo.duracion,
-			articulo.usuario,
-			articulo.foto,
-			(if(isnull(articulo.paquete),null,(select gastos_envio from paquete where paquete.id=articulo.paquete)))as gastos_envio,
-			articulo.estado,
-			articulo.comprador,
-			articulo.fecha_terminado,
-			articulo.paquete,
-			articulo.pagos,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa1 from paquete where paquete.id=articulo.paquete)))as fecha_disputa1,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa2 from paquete where paquete.id=articulo.paquete)))as fecha_disputa2,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa3 from paquete where paquete.id=articulo.paquete)))as fecha_disputa3,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa4 from paquete where paquete.id=articulo.paquete)))as fecha_disputa4,
-			(if(isnull(articulo.paquete),null,(select tipo_pago from paquete where paquete.id=articulo.paquete)))as tipo_pago,
-			(if(isnull(articulo.paquete),null,(select fecha_pago from paquete where paquete.id=articulo.paquete)))as fecha_pago,
-			(if(isnull(articulo.paquete),null,(select denuncia1 from paquete where paquete.id=articulo.paquete)))as denuncia1,
-			(if(isnull(articulo.paquete),null,(select fecha from paquete where paquete.id=articulo.paquete)))as fecha_paquete,
-			(if(isnull(articulo.paquete),null,(select denuncia2 from paquete where paquete.id=articulo.paquete)))as denuncia2 ,
-			(if(isnull(articulo.paquete),null,(select denuncia3 from paquete where paquete.id=articulo.paquete)))as denuncia3,
-			(if(isnull(articulo.paquete),null,(select denuncia4 from paquete where paquete.id=articulo.paquete)))as denuncia4,
-			(if(isnull(articulo.paquete),null,(select fecha_envio from paquete where paquete.id=articulo.paquete)))as fecha_envio
-			$sextra
+null as transaccion,
+articulo.cantidad,
+articulo.id,
+articulo.titulo,
+articulo.tipo,
+articulo.fecha_registro,
+articulo.duracion,
+articulo.usuario,
+articulo.foto,
+ (if(isnull(articulo.paquete),null,(select gastos_envio from paquete where paquete.id=articulo.paquete)))as gastos_envio,
+articulo.estado,
+articulo.comprador,
+articulo.fecha_terminado,
+articulo.paquete,
+articulo.pagos,
+(if(isnull(articulo.paquete),null,(select fecha_disputa1 from paquete where paquete.id=articulo.paquete)))as fecha_disputa1,
+(if(isnull(articulo.paquete),null,(select fecha_disputa2 from paquete where paquete.id=articulo.paquete)))as fecha_disputa2,
+(if(isnull(articulo.paquete),null,(select fecha_disputa3 from paquete where paquete.id=articulo.paquete)))as fecha_disputa3,
+(if(isnull(articulo.paquete),null,(select fecha_disputa4 from paquete where paquete.id=articulo.paquete)))as fecha_disputa4,
+(if(isnull(articulo.paquete),null,(select tipo_pago from paquete where paquete.id=articulo.paquete)))as tipo_pago,
+(if(isnull(articulo.paquete),null,(select fecha_pago from paquete where paquete.id=articulo.paquete)))as fecha_pago,
+(if(isnull(articulo.paquete),null,(select denuncia1 from paquete where paquete.id=articulo.paquete)))as denuncia1,
+(if(isnull(articulo.paquete),null,(select fecha from paquete where paquete.id=articulo.paquete)))as fecha_paquete,
+(if(isnull(articulo.paquete),null,(select denuncia2 from paquete where paquete.id=articulo.paquete)))as denuncia2 ,
+(if(isnull(articulo.paquete),null,(select denuncia3 from paquete where paquete.id=articulo.paquete)))as denuncia3,
+(if(isnull(articulo.paquete),null,(select denuncia4 from paquete where paquete.id=articulo.paquete)))as denuncia4,
+(if(isnull(articulo.paquete),null,(select fecha_envio from paquete where paquete.id=articulo.paquete)))as fecha_envio
+$sextra
 
 
-			FROM articulo
-			INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
+ FROM articulo
+INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
 
-			WHERE terminado = 1 and articulo.estado<>'A la venta' and articulo.estado<>'Finalizado' ) union (
-			select
+WHERE terminado = 1 and articulo.estado<>'A la venta' and articulo.estado<>'Finalizado' ) union (
+select
 
-			transaccion.id as transaccion,
-			transaccion.cantidad,
-			articulo.id,
-			articulo.titulo,
-			articulo.tipo,
-			articulo.fecha_registro,
-			articulo.duracion,
-			articulo.usuario,
-			articulo.foto,
-			(if(isnull(transaccion.paquete),null,(select gastos_envio from paquete where paquete.id=transaccion.paquete)))as gastos_envio,
-			transaccion.estado,
-			transaccion.comprador,
-			transaccion.fecha_terminado,
-			transaccion.paquete,
-			articulo.pagos,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa1 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa1,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa2 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa2,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa3 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa3,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa4 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa4,
-			(if(isnull(transaccion.paquete),null,(select tipo_pago from paquete where paquete.id=transaccion.paquete)))as tipo_pago,
-			(if(isnull(transaccion.paquete),null,(select fecha_pago from paquete where paquete.id=transaccion.paquete)))as fecha_pago,
-			(if(isnull(transaccion.paquete),null,(select denuncia1 from paquete where paquete.id=transaccion.paquete)))as denuncia1,
-			(if(isnull(transaccion.paquete),null,(select fecha from paquete where paquete.id=transaccion.paquete)))as fecha_paquete,
-			(if(isnull(transaccion.paquete),null,(select denuncia2 from paquete where paquete.id=transaccion.paquete)))as denuncia2 ,
-			(if(isnull(transaccion.paquete),null,(select denuncia3 from paquete where paquete.id=transaccion.paquete)))as denuncia3,
-			(if(isnull(transaccion.paquete),null,(select denuncia4 from paquete where paquete.id=transaccion.paquete)))as denuncia4,
-			(if(isnull(transaccion.paquete),null,(select fecha_envio from paquete where paquete.id=transaccion.paquete)))as fecha_envio
-			$sextra2
+transaccion.id as transaccion,
+transaccion.cantidad,
+articulo.id,
+articulo.titulo,
+articulo.tipo,
+articulo.fecha_registro,
+articulo.duracion,
+articulo.usuario,
+articulo.foto,
+ (if(isnull(transaccion.paquete),null,(select gastos_envio from paquete where paquete.id=transaccion.paquete)))as gastos_envio,
+transaccion.estado,
+transaccion.comprador,
+transaccion.fecha_terminado,
+transaccion.paquete,
+articulo.pagos,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa1 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa1,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa2 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa2,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa3 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa3,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa4 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa4,
+(if(isnull(transaccion.paquete),null,(select tipo_pago from paquete where paquete.id=transaccion.paquete)))as tipo_pago,
+(if(isnull(transaccion.paquete),null,(select fecha_pago from paquete where paquete.id=transaccion.paquete)))as fecha_pago,
+(if(isnull(transaccion.paquete),null,(select denuncia1 from paquete where paquete.id=transaccion.paquete)))as denuncia1,
+(if(isnull(transaccion.paquete),null,(select fecha from paquete where paquete.id=transaccion.paquete)))as fecha_paquete,
+(if(isnull(transaccion.paquete),null,(select denuncia2 from paquete where paquete.id=transaccion.paquete)))as denuncia2 ,
+(if(isnull(transaccion.paquete),null,(select denuncia3 from paquete where paquete.id=transaccion.paquete)))as denuncia3,
+(if(isnull(transaccion.paquete),null,(select denuncia4 from paquete where paquete.id=transaccion.paquete)))as denuncia4,
+(if(isnull(transaccion.paquete),null,(select fecha_envio from paquete where paquete.id=transaccion.paquete)))as fecha_envio
+$sextra2
 
-			from transaccion
-			inner join articulo on articulo.id=transaccion.articulo
-			inner join usuario on articulo.usuario=usuario.id and usuario.id='$usuario'
-			where transaccion.estado<>'Finalizado'
-			))as x
-			where 1 $wextra
-			ORDER BY $orderby $asc ";
+from transaccion
+inner join articulo on articulo.id=transaccion.articulo
+inner join usuario on articulo.usuario=usuario.id and usuario.id='$usuario'
+where transaccion.estado<>'Finalizado'
+))as x
+where 1 $wextra
+ORDER BY $orderby $asc ";
 		}
 		return false;
 	}
@@ -1386,76 +1374,76 @@ class Articulo_model extends CI_Model {
 			}
 			
 			return "select * from ((SELECT
-			null as transaccion,
-			articulo.cantidad,
-			articulo.id,
-			articulo.titulo,
-			articulo.tipo,
-			articulo.fecha_registro,
-			articulo.duracion,
-			articulo.usuario,
-			articulo.foto,
-			(if(isnull(articulo.paquete),null,(select gastos_envio from paquete where paquete.id=articulo.paquete)))as gastos_envio,
-			articulo.estado,
-			articulo.comprador,
-			articulo.fecha_terminado,
-			articulo.paquete,
-			articulo.pagos,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa1 from paquete where paquete.id=articulo.paquete)))as fecha_disputa1,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa2 from paquete where paquete.id=articulo.paquete)))as fecha_disputa2,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa3 from paquete where paquete.id=articulo.paquete)))as fecha_disputa3,
-			(if(isnull(articulo.paquete),null,(select fecha_disputa4 from paquete where paquete.id=articulo.paquete)))as fecha_disputa4,
-			(if(isnull(articulo.paquete),null,(select tipo_pago from paquete where paquete.id=articulo.paquete)))as tipo_pago,
-			(if(isnull(articulo.paquete),null,(select fecha_pago from paquete where paquete.id=articulo.paquete)))as fecha_pago,
-			(if(isnull(articulo.paquete),null,(select denuncia1 from paquete where paquete.id=articulo.paquete)))as denuncia1 ,
-			(if(isnull(articulo.paquete),null,(select fecha from paquete where paquete.id=articulo.paquete)))as fecha_paquete,
-			(if(isnull(articulo.paquete),null,(select denuncia2 from paquete where paquete.id=articulo.paquete)))as denuncia2 ,
-			(if(isnull(articulo.paquete),null,(select denuncia3 from paquete where paquete.id=articulo.paquete)))as denuncia3,
-			(if(isnull(articulo.paquete),null,(select denuncia4 from paquete where paquete.id=articulo.paquete)))as denuncia4,
-			(if(isnull(articulo.paquete),null,(select fecha_envio from paquete where paquete.id=articulo.paquete)))as fecha_envio
-			$sextra
+                  null as transaccion,
+                  articulo.cantidad,
+articulo.id,
+articulo.titulo,
+articulo.tipo,
+articulo.fecha_registro,
+articulo.duracion,
+articulo.usuario,
+articulo.foto,
+(if(isnull(articulo.paquete),null,(select gastos_envio from paquete where paquete.id=articulo.paquete)))as gastos_envio,
+articulo.estado,
+articulo.comprador,
+articulo.fecha_terminado,
+articulo.paquete,
+articulo.pagos,
+(if(isnull(articulo.paquete),null,(select fecha_disputa1 from paquete where paquete.id=articulo.paquete)))as fecha_disputa1,
+(if(isnull(articulo.paquete),null,(select fecha_disputa2 from paquete where paquete.id=articulo.paquete)))as fecha_disputa2,
+(if(isnull(articulo.paquete),null,(select fecha_disputa3 from paquete where paquete.id=articulo.paquete)))as fecha_disputa3,
+(if(isnull(articulo.paquete),null,(select fecha_disputa4 from paquete where paquete.id=articulo.paquete)))as fecha_disputa4,
+(if(isnull(articulo.paquete),null,(select tipo_pago from paquete where paquete.id=articulo.paquete)))as tipo_pago,
+(if(isnull(articulo.paquete),null,(select fecha_pago from paquete where paquete.id=articulo.paquete)))as fecha_pago,
+(if(isnull(articulo.paquete),null,(select denuncia1 from paquete where paquete.id=articulo.paquete)))as denuncia1 ,
+(if(isnull(articulo.paquete),null,(select fecha from paquete where paquete.id=articulo.paquete)))as fecha_paquete,
+(if(isnull(articulo.paquete),null,(select denuncia2 from paquete where paquete.id=articulo.paquete)))as denuncia2 ,
+(if(isnull(articulo.paquete),null,(select denuncia3 from paquete where paquete.id=articulo.paquete)))as denuncia3,
+(if(isnull(articulo.paquete),null,(select denuncia4 from paquete where paquete.id=articulo.paquete)))as denuncia4,
+(if(isnull(articulo.paquete),null,(select fecha_envio from paquete where paquete.id=articulo.paquete)))as fecha_envio
+$sextra
 
-			FROM articulo
-			INNER JOIN usuario ON usuario.id=articulo.comprador and usuario.id='$usuario'
-			WHERE terminado = 1 and articulo.estado<>'A la venta' and articulo.estado<>'Finalizado')
-			union
-			(SELECT
-			transaccion.id as transaccion,
-			transaccion.cantidad,
-			articulo.id,
-			articulo.titulo,
-			articulo.tipo,
-			articulo.fecha_registro,
-			articulo.duracion,
-			articulo.usuario,
-			articulo.foto,
-			(if(isnull(transaccion.paquete),null,(select gastos_envio from paquete where paquete.id=transaccion.paquete)))as gastos_envio,
-			transaccion.estado,
-			transaccion.comprador,
-			transaccion.fecha_terminado,
-			transaccion.paquete,
-			articulo.pagos,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa1 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa1,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa2 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa2,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa3 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa3,
-			(if(isnull(transaccion.paquete),null,(select fecha_disputa4 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa4,
-			(if(isnull(transaccion.paquete),null,(select tipo_pago from paquete where paquete.id=transaccion.paquete)))as tipo_pago,
-			(if(isnull(transaccion.paquete),null,(select fecha_pago from paquete where paquete.id=transaccion.paquete)))as fecha_pago,
-			(if(isnull(transaccion.paquete),null,(select denuncia1 from paquete where paquete.id=transaccion.paquete)))as denuncia1 ,
-			(if(isnull(transaccion.paquete),null,(select fecha from paquete where paquete.id=transaccion.paquete)))as fecha_paquete,
-			(if(isnull(transaccion.paquete),null,(select denuncia2 from paquete where paquete.id=transaccion.paquete)))as denuncia2 ,
-			(if(isnull(transaccion.paquete),null,(select denuncia3 from paquete where paquete.id=transaccion.paquete)))as denuncia3,
-			(if(isnull(transaccion.paquete),null,(select denuncia4 from paquete where paquete.id=transaccion.paquete)))as denuncia4,
-			(if(isnull(transaccion.paquete),null,(select fecha_envio from paquete where paquete.id=transaccion.paquete)))as fecha_envio
-			$sextra2
+FROM articulo
+INNER JOIN usuario ON usuario.id=articulo.comprador and usuario.id='$usuario'
+WHERE terminado = 1 and articulo.estado<>'A la venta' and articulo.estado<>'Finalizado')
+union
+(SELECT
+transaccion.id as transaccion,
+transaccion.cantidad,
+articulo.id,
+articulo.titulo,
+articulo.tipo,
+articulo.fecha_registro,
+articulo.duracion,
+articulo.usuario,
+articulo.foto,
+(if(isnull(transaccion.paquete),null,(select gastos_envio from paquete where paquete.id=transaccion.paquete)))as gastos_envio,
+transaccion.estado,
+transaccion.comprador,
+transaccion.fecha_terminado,
+transaccion.paquete,
+articulo.pagos,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa1 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa1,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa2 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa2,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa3 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa3,
+(if(isnull(transaccion.paquete),null,(select fecha_disputa4 from paquete where paquete.id=transaccion.paquete)))as fecha_disputa4,
+(if(isnull(transaccion.paquete),null,(select tipo_pago from paquete where paquete.id=transaccion.paquete)))as tipo_pago,
+(if(isnull(transaccion.paquete),null,(select fecha_pago from paquete where paquete.id=transaccion.paquete)))as fecha_pago,
+(if(isnull(transaccion.paquete),null,(select denuncia1 from paquete where paquete.id=transaccion.paquete)))as denuncia1 ,
+(if(isnull(transaccion.paquete),null,(select fecha from paquete where paquete.id=transaccion.paquete)))as fecha_paquete,
+(if(isnull(transaccion.paquete),null,(select denuncia2 from paquete where paquete.id=transaccion.paquete)))as denuncia2 ,
+(if(isnull(transaccion.paquete),null,(select denuncia3 from paquete where paquete.id=transaccion.paquete)))as denuncia3,
+(if(isnull(transaccion.paquete),null,(select denuncia4 from paquete where paquete.id=transaccion.paquete)))as denuncia4,
+(if(isnull(transaccion.paquete),null,(select fecha_envio from paquete where paquete.id=transaccion.paquete)))as fecha_envio
+$sextra2
 
-			FROM transaccion
-			inner join articulo on articulo.id=transaccion.articulo
-			INNER JOIN usuario ON usuario.id=transaccion.comprador and usuario.id='$usuario'
-			where transaccion.estado<>'Finalizado'
-			)) as x
-			where 1 $wextra
-			ORDER BY $orderby $asc ";
+FROM transaccion
+inner join articulo on articulo.id=transaccion.articulo
+INNER JOIN usuario ON usuario.id=transaccion.comprador and usuario.id='$usuario'
+where transaccion.estado<>'Finalizado'
+)) as x
+where 1 $wextra
+ORDER BY $orderby $asc ";
 		}
 		return false;
 	}
@@ -1502,11 +1490,11 @@ class Articulo_model extends CI_Model {
 			}
 			$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
 			return "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,(select usuario from oferta where oferta.articulo=articulo.id order by monto desc limit 0,1) as maximoPujador ,(select estado from oferta where oferta.articulo=articulo.id and oferta.usuario='$usuario' order by monto desc limit 0,1) as estadoOferta $sextra
-			FROM articulo
-			inner join oferta on oferta.articulo=articulo.id and oferta.estado<>'Aceptado' and oferta.usuario='$usuario'
-			WHERE terminado = 0 and articulo.estado='A la venta'
-			group by articulo.id
-			ORDER by $orderby $asc ";
+                  FROM articulo
+                  inner join oferta on oferta.articulo=articulo.id and oferta.estado<>'Aceptado' and oferta.usuario='$usuario'
+                  WHERE terminado = 0 and articulo.estado='A la venta'
+                  group by articulo.id
+                  ORDER by $orderby $asc ";
 		}
 		return false;
 	}
@@ -1520,10 +1508,10 @@ class Articulo_model extends CI_Model {
 				$orderby = "time";
 				$asc = "desc";
 			}
+			
 			$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
 			$sextra = "";
 			$fextra = "";
-			$precio = "articulo.precio";
 			switch ($orderby) {
 				case "follower" :
 					$orderby = "seguidores";
@@ -1533,11 +1521,11 @@ class Articulo_model extends CI_Model {
 					$sextra .= ",(select count(oferta.id) from oferta inner join usuario on usuario.id=oferta.usuario and usuario.estado<>'Baneado' where articulo.id=oferta.articulo) as nOfertas";
 					break;
 				case "price" :
-					$precio = "if(articulo.tipo<>'Subasta',articulo.precio,mayorPuja(articulo.id)) as precio";
+					$sextra .= ",if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
 					$orderby = "precio";
 					break;
 				default :
-					$sextra .= ",if(articulo.tipo<>'Subasta',unix_timestamp(articulo.fecha_registro)+ $vencimientoOferta ,unix_timestamp(articulo.fecha_registro)+articulo.duracion*86400)as tiempo";
+					$sextra .= ",if(articulo.tipo='Fijo',unix_timestamp(articulo.fecha_registro)+ $vencimientoOferta - unix_timestamp(),unix_timestamp(articulo.fecha_registro)+articulo.duracion*86400 - unix_timestamp())as tiempo";
 					$orderby = "tiempo";
 					break;
 			}
@@ -1555,12 +1543,12 @@ class Articulo_model extends CI_Model {
 			} else {
 				$sextra .= ",(select count(oferta.id) from oferta inner join usuario on usuario.id=oferta.usuario and usuario.estado<>'Baneado' where oferta.articulo=articulo.id and oferta.estado='Pendiente') as ofertasPendientes";
 			}
-			return "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,$precio,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,(select count(siguiendo.id) from siguiendo where siguiendo.articulo=articulo.id) as seguidores $sextra
-			FROM articulo
-			INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
-			$fextra
-			WHERE terminado = 0 and articulo.estado='A la venta'
-			ORDER by $orderby $asc ";
+			return "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,articulo.precio,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,(select count(siguiendo.id) from siguiendo where siguiendo.articulo=articulo.id) as seguidores $sextra
+                  FROM articulo
+                  INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
+                   $fextra
+                  WHERE terminado = 0 and articulo.estado='A la venta'
+                  ORDER by $orderby $asc ";
 		}
 		return false;
 	}
@@ -1599,11 +1587,11 @@ class Articulo_model extends CI_Model {
 					break;
 			}
 			return "SELECT articulo.id,articulo.titulo,articulo.tipo,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,articulo.fecha_terminado $sextra
-			FROM articulo
-			inner join oferta on oferta.articulo=articulo.id and oferta.estado<>'Aceptado' and oferta.usuario='$usuario'
-			WHERE terminado = 1 and (articulo.estado='Sin gastos Envio' or articulo.estado='A la venta' or articulo.estado='Sin Pago' or articulo.estado='Finalizado') and (articulo.comprador<>'$usuario' or isnull(articulo.comprador))
-			group by articulo.id
-			ORDER by $orderby $asc ";
+                  FROM articulo
+                  inner join oferta on oferta.articulo=articulo.id and oferta.estado<>'Aceptado' and oferta.usuario='$usuario'
+                  WHERE terminado = 1 and (articulo.estado='Sin gastos Envio' or articulo.estado='A la venta' or articulo.estado='Sin Pago' or articulo.estado='Finalizado') and (articulo.comprador<>'$usuario' or isnull(articulo.comprador))
+                  group by articulo.id
+                  ORDER by $orderby $asc ";
 		}
 		return false;
 	}
@@ -1642,13 +1630,13 @@ class Articulo_model extends CI_Model {
 			}
 			
 			$sql = "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,articulo.precio,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto,articulo.fecha_terminado $sextra
-			FROM articulo
-			INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
-			WHERE terminado = 1 and (articulo.estado='A la venta' or articulo.estado='Finalizado') and (articulo.tipo<>'Cantidad' or (articulo.tipo='Cantidad' && (articulo.cantidad>0 or
-			(articulo.cantidad=0
-			and articulo.id not in(select articulo from transaccion)
-			and isnull((select id from paquete where articulos like articulo.id or articulos like concat(articulo.id,'%') or articulos like concat(articulo.id,',%') or articulos like concat('%,',articulo.id) or articulos like concat('%,',articulo.id,',%')))))))
-			ORDER by $orderby $asc ";
+                  FROM articulo
+                  INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.id='$usuario'
+                  WHERE terminado = 1 and (articulo.estado='A la venta' or articulo.estado='Finalizado') and (articulo.tipo<>'Cantidad' or (articulo.tipo='Cantidad' && (articulo.cantidad>0 or 
+                  (articulo.cantidad=0 
+                  and articulo.id not in(select articulo from transaccion)
+                  and isnull((select id from paquete where articulos like articulo.id or articulos like concat(articulo.id,'%') or articulos like concat(articulo.id,',%') or articulos like concat('%,',articulo.id) or articulos like concat('%,',articulo.id,',%'))))))) 
+                  ORDER by $orderby $asc ";
 			return $sql;
 		}
 		return false;
@@ -1744,18 +1732,20 @@ class Articulo_model extends CI_Model {
 	}
 	public function listarArticulosXEnVentaFecha($usuario, $new = false, $inicio, $total) {
 		$query = $this->prepararArticulosXEnVentaFecha ( $usuario, $new );
-		$res = $this->db->query ( "$query limit $inicio,$total" );
+		$res = $this->db->query ( $query );
 		if ($res) {
-			$totalRes = 0;
-			$tRes = $this->db->query ( "select count(1) as total from ($query) as x " )->result ();
-			if (is_array ( $tRes ) && count ( $tRes ) > 0) {
-				$totalRes = $tRes [0]->total;
+			$totalRes = $res->num_rows ();
+			if ($inicio < $totalRes) {
+				$total = ($totalRes < $inicio + $total) ? $totalRes - $inicio : $total;
+				$datos = array ();
+				for($i = $inicio; $i < $inicio + $total; $i ++) {
+					$datos [] = $res->row ( $i );
+				}
+				return array (
+						$totalRes,
+						$datos 
+				);
 			}
-			$datos = $res->result ();
-			return array (
-					$totalRes,
-					$datos 
-			);
 		}
 		return false;
 	}
@@ -1871,6 +1861,7 @@ class Articulo_model extends CI_Model {
 		if (! $inicio) {
 			$inicio = 0;
 		}
+		
 		$data ["inicio"] = $inicio;
 		$data ["totalpagina"] = $totalpagina;
 		$data ["finalEnVenta"] = 0;
@@ -1951,7 +1942,6 @@ class Articulo_model extends CI_Model {
 		$data ["pagSig"] = $pagina + 1;
 		$data ["totalpagina"] = $totalpagina;
 		$data ["criterio"] = $criterio;
-		
 		switch ($section) {
 			case "item" :
 				$tipo = "Fijo";
@@ -1963,6 +1953,7 @@ class Articulo_model extends CI_Model {
 				$tipo = false;
 				break;
 		}
+		
 		$x = $this->listarArticulosXCriterioFecha ( $criterio, $tipo, $orden, $ubicacion, $categoria, $idioma, $usuario, $inicio, $totalpagina );
 		// print ($this->db->last_query ()) ;
 		if ($x) {
@@ -1974,18 +1965,17 @@ class Articulo_model extends CI_Model {
 				$data ["categorias"] = $this->darCategorias ( $categoria );
 			}
 			$data ["categorias"] = $this->ordenarArbol ( $data ["categorias"] );
-			
 			$this->procesarArticulos ( $data ["articulos"] );
 		}
 		return $data;
 	}
-	public function listarArticulosPendientes($i = false, $t = false) {
+	public function listarArticulosPendientes() {
 		$this->db->select ( "*,if(tipo<>'Subasta',unix_timestamp ( fecha_registro ) + " . $this->configuracion->variables ( "vencimientoOferta" ) . " * 86400,unix_timestamp ( fecha_registro ) + duracion * 86400) as tiempo" );
 		$this->db->having ( "tiempo<=unix_timestamp()" );
 		$this->db->where ( array (
 				"terminado" => 0 
 		) );
-		return $this->darTodos ( "articulo", $t, $i );
+		return $this->darTodos ( "articulo" );
 	}
 	public function cantidadOfertasPendientes($articulo) {
 		$this->db->where ( array (
@@ -2314,10 +2304,10 @@ class Articulo_model extends CI_Model {
 				return $r [0];
 			}
 			$sql = "SELECT paquete.monto,paquete.gastos_envio,paquete.id,paquete.articulos,paquete.transacciones
-			FROM paquete
-			inner join transaccion on transaccion.paquete=paquete.id
-			inner join articulo on articulo.id=transaccion.articulo and articulo.pagos='$articulo->pagos'
-			WHERE paquete.estado='Sin pago' and paquete.vendedor='$articulo->usuario' and paquete.comprador='$comprador'  and (paquete.denuncia2=0 or isnull(paquete.denuncia2)) group by paquete.id";
+FROM paquete
+inner join transaccion on transaccion.paquete=paquete.id
+inner join articulo on articulo.id=transaccion.articulo and articulo.pagos='$articulo->pagos'
+WHERE paquete.estado='Sin pago' and paquete.vendedor='$articulo->usuario' and paquete.comprador='$comprador'  and (paquete.denuncia2=0 or isnull(paquete.denuncia2)) group by paquete.id";
 			$r = $this->db->query ( $sql )->result ();
 			if ($r && is_array ( $r ) && count ( $r ) > 0) {
 				return $r [0];
@@ -2362,50 +2352,50 @@ class Articulo_model extends CI_Model {
 			}
 			
 			return "select * from ((SELECT
-			articulo.cantidad,
-			articulo.id,
-			articulo.titulo,
-			articulo.tipo,
-			if(isnull(articulo.precio_oferta),articulo.precio,articulo.precio_oferta) as precio,
-			articulo.fecha_registro,
-			articulo.duracion,
-			articulo.usuario,
-			articulo.foto,
-			articulo.categoria as categoria,
-			articulo.comprador,
-			articulo.fecha_terminado,
-			articulo.estado,
-			(if(isnull(articulo.paquete),null,(select gastos_envio from paquete where paquete.id=articulo.paquete)))as gastos_envio,
-			articulo.pagos,
-			null as transaccion
+articulo.cantidad,
+articulo.id,
+articulo.titulo,
+articulo.tipo,
+if(isnull(articulo.precio_oferta),articulo.precio,articulo.precio_oferta) as precio,
+articulo.fecha_registro,
+articulo.duracion,
+articulo.usuario,
+articulo.foto,
+articulo.categoria as categoria,
+articulo.comprador,
+articulo.fecha_terminado,
+articulo.estado,
+(if(isnull(articulo.paquete),null,(select gastos_envio from paquete where paquete.id=articulo.paquete)))as gastos_envio,
+articulo.pagos,
+null as transaccion
 
-			FROM articulo
-			$jextra
-			WHERE $wextra)
-			union
-			(SELECT
-			transaccion.cantidad,
-			transaccion.articulo,
-			articulo.titulo,
-			articulo.tipo,
-			transaccion.precio*transaccion.cantidad,
-			articulo.fecha_registro,
-			articulo.duracion,
-			articulo.usuario,
-			articulo.foto,
-			articulo.categoria as categoria,
-			transaccion.comprador,
-			transaccion.fecha_terminado,
-			transaccion.estado,
-			(if(isnull(transaccion.paquete),null,(select gastos_envio from paquete where paquete.id=transaccion.paquete)))as gastos_envio,
-			articulo.pagos,
-			transaccion.id as transaccion
+FROM articulo
+$jextra
+WHERE $wextra)
+union
+(SELECT
+transaccion.cantidad,
+transaccion.articulo,
+articulo.titulo,
+articulo.tipo,
+transaccion.precio*transaccion.cantidad,
+articulo.fecha_registro,
+articulo.duracion,
+articulo.usuario,
+articulo.foto,
+articulo.categoria as categoria,
+transaccion.comprador,
+transaccion.fecha_terminado,
+transaccion.estado,
+(if(isnull(transaccion.paquete),null,(select gastos_envio from paquete where paquete.id=transaccion.paquete)))as gastos_envio,
+articulo.pagos,
+transaccion.id as transaccion
 
-			FROM transaccion
-			INNER JOIN articulo ON transaccion.articulo=articulo.id
-			$jextra2
-			WHERE  $wextra2))as articulo
-			ORDER BY articulo.titulo desc";
+FROM transaccion
+INNER JOIN articulo ON transaccion.articulo=articulo.id
+$jextra2
+WHERE  $wextra2))as articulo
+ORDER BY articulo.titulo desc";
 		}
 		return false;
 	}
@@ -2564,9 +2554,6 @@ class Articulo_model extends CI_Model {
 						$CI = &get_instance ();
 						$a->comprador = $oferta->usuario;
 						$pid = $this->adicionarPaqueteSimilar ( $a );
-						$this->db->delete ( "tmp_busqueda", array (
-								"id" => $articulo 
-						) );
 						return $this->db->update ( "articulo", array (
 								"paquete" => $pid,
 								"estado" => "Sin Pago",
@@ -2798,9 +2785,6 @@ class Articulo_model extends CI_Model {
 							"id" => $articulo 
 					) );
 				}
-				$this->db->delete ( "tmp_busqueda", array (
-						"id" => $articulo 
-				) );
 			}
 		} else {
 			$this->db->update ( "transaccion", array (
@@ -2873,7 +2857,6 @@ class Articulo_model extends CI_Model {
 					$this->adicionarCantidad ( $this->categoria );
 				}
 			}
-			$this->resetTemporal ();
 			return $this->db->update ( "articulo", $datos, array (
 					"id" => $this->id 
 			) );
@@ -2886,7 +2869,6 @@ class Articulo_model extends CI_Model {
 			}
 			if ($this->db->insert ( "articulo", $datos )) {
 				$this->id = $this->db->insert_id ();
-				$this->resetTemporal ();
 				return $this->id;
 			}
 		}
@@ -2967,13 +2949,13 @@ class Articulo_model extends CI_Model {
 					$extra .= " and articulo.id not in(" . implode ( ",", $notin ) . ")";
 				}
 				$query = "SELECT articulo.*, pais.nombre as pais_nombre
-				FROM (articulo)
-				INNER JOIN usuario ON usuario.id=articulo.usuario
-				INNER JOIN pais ON pais.codigo3=usuario.pais
-				WHERE terminado = 0
-				$extra
-				ORDER BY fecha_registro desc
-				LIMIT $total ";
+                        FROM (articulo)
+                        INNER JOIN usuario ON usuario.id=articulo.usuario
+                        INNER JOIN pais ON pais.codigo3=usuario.pais
+                        WHERE terminado = 0
+                         $extra
+                        ORDER BY fecha_registro desc
+                        LIMIT $total ";
 				$res = $this->db->query ( $query );
 				$res = $this->darResuts ( $res );
 				$cantidad = $res ? count ( $res ) : 0;
@@ -2992,151 +2974,124 @@ class Articulo_model extends CI_Model {
 		}
 		return false;
 	}
-	public function leer25Articulos() {
-		return $this->leerNArticulos ( 25 );
-	}
-	public function leer10Articulos() {
-		return $this->leerNArticulos ( 10 );
-	}
-	public function leerNArticulos($n) {
-		$precio = "articulo.precio";
-		$sql = "SELECT articulo.id,articulo.titulo,articulo.tipo,$precio ,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto
-		FROM (articulo)
-		INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.estado<>'Baneado'
-		WHERE terminado = 0 and articulo.estado<>'Baneado'
-		ORDER BY fecha_registro desc
-		limit 0,$n
-		";
-		$res = $this->db->query ( $sql )->result ();
-		$this->procesarArticulos ( $res );
-		return $res;
-	}
 	public function prepararConsultaArticuloXCriterioFecha($criterio = false, $tipo = false, $orden = false, $ubicacion = false, $categoria = false, $idioma = false, $usuario = false) {
-		$orden = $orden ? $orden : "ultimos";
-		$tiempo = time ();
 		if (trim ( $orden ) === "" && $usuario) {
 			$orden = "finaliza";
 		}
+		
 		$criterio = explode ( " ", trim ( preg_replace ( "/(\s+)/im", " ", $criterio ) ) );
-		$wextra = "";
 		if ($criterio && is_array ( $criterio ) && count ( $criterio ) > 0) {
-			$ors = array_merge ( array (), $criterio );
-			if (count ( $ors ) > 0) {
-				$wextra = " (";
-				if (count ( $ors ) > 0) {
-					$wextra .= "(";
-					$tors = array ();
-					foreach ( $ors as $o ) {
-						$tors [] = "titulo like '%" . str_replace ( "'", "\\'", $o ) . "%'";
+			$nameBD = "tmp_busqueda_" . normalizarTexto ( $orden );
+			
+			$res = @$this->db->query ( "select 1 from $nameBD limit 1" );
+			if (! $res) {
+				
+				$precio = "articulo.precio";
+				$orderby = "ORDER BY fecha_registro desc";
+				$adicionalSelect = "";
+				$extra = "";
+				if ($ubicacion) {
+					$ubicacion = explode ( "-", $ubicacion );
+					if (count ( $ubicacion ) > 1) {
+						switch ($ubicacion [0]) {
+							case "P" :
+								$extra .= " and pais.codigo3='" . $ubicacion [1] . "' ";
+								break;
+							
+							default :
+								$extra .= " and pais.continente='" . $ubicacion [1] . "' ";
+								break;
+						}
 					}
-					$wextra .= implode ( " and ", $tors );
-					$wextra .= ")";
 				}
-				$wextra .= ")";
-			}
-		}
-		if ($ubicacion) {
-			$ubicacion = explode ( "-", $ubicacion );
-			if (count ( $ubicacion ) > 1) {
-				$wextra = $wextra ? $wextra . " and " : "";
-				switch ($ubicacion [0]) {
-					case "P" :
-						$wextra .= "codigo3='" . $ubicacion [1] . "' ";
+				$adicionaInsert = "";
+				$adicionaCreate = "";
+				switch ($orden) {
+					case "finaliza" :
+						$orderby = "ORDER BY tiempo asc";
+						$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
+						$adicionalSelect = ",if(articulo.tipo='Fijo' or articulo.tipo='Cantidad',unix_timestamp(articulo.fecha_registro-now())+$vencimientoOferta ,unix_timestamp(articulo.fecha_registro- unix_timestamp())+articulo.duracion*86400 )as tiempo";
+						$adicionaCreate = "tiempo bigint null,";
+						$adicionaInsert = ",tiempo";
 						break;
-					
-					default :
-						$wextra .= "continente='" . $ubicacion [1] . "' ";
+					case "mas-alto" :
+						$precio = "if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
+						$orderby = "ORDER BY precio desc";
+						break;
+					case "mas-bajo" :
+						$precio = "if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
+						$orderby = "ORDER BY precio asc";
 						break;
 				}
-			}
-		}
-		if ($tipo) {
-			$wextra = $wextra ? $wextra . " and " : "";
-			if ($tipo !== "Fijo") {
-				$wextra .= " tipo='$tipo'";
-			} else {
-				$wextra .= " (tipo='$tipo' or tipo='Cantidad')";
-			}
-		}
-		if ($usuario) {
-			$wextra = $wextra ? $wextra . " and " : "";
-			$wextra .= " usuario='$usuario'";
-		}
-		if ($categoria) {
-			$wextra = $wextra ? $wextra . " and " : "";
-			$this->load->model ( "categoria_model", "categoria_model" );
-			$ids = $this->categoria_model->darArbolHijos ( $categoria );
-			if ($ids && is_array ( $ids ) && count ( $ids ) > 0) {
-				$wextra .= "categoria in(" . implode ( ",", $ids ) . ")";
-			}
-		}
-		// $orderby="";
-		$orderby = "ORDER BY fecha_registro desc";
-		switch ($orden) {
-			case "finaliza" :
-				$orderby = "ORDER BY tiempo asc";
-				break;
-			case "mas-alto" :
-				$orderby = "ORDER BY precio desc";
-				break;
-			case "mas-bajo" :
-				$orderby = "ORDER BY precio asc";
-				break;
-		}
-		$wextra = $wextra ? "where $wextra" : "";
-		$nameBD = $this->crearTemporal ();
-		$query = "select * from $nameBD $wextra $orderby";
-		return $query;
-	}
-	public function crearTemporal() {
-		$nameBD = "tmp_busqueda";
-		$res = @$this->db->query ( "select 1 from $nameBD limit 1" );
-		if (! $res) {
-			
-			$precio = "if(articulo.tipo='Fijo',articulo.precio,mayorPuja(articulo.id)) as precio";
-			$extra = "";
-			$vencimientoOferta = intval ( $this->configuracion->variables ( "vencimientoOferta" ) ) * 86400;
-			$adicionalSelect = ",if(articulo.tipo='Fijo' or articulo.tipo='Cantidad',unix_timestamp(articulo.fecha_registro)+$vencimientoOferta ,unix_timestamp(articulo.fecha_registro)+articulo.duracion*86400 )as tiempo";
-			$adicionaCreate = "tiempo bigint null,";
-			$adicionaInsert = ",tiempo";
-			$query = "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,$precio ,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto, pais.nombre as pais_nombre, ciudad.nombre as ciudad_nombre, articulo.categoria as categoria,pais.codigo3,pais.continente $adicionalSelect
-			FROM (articulo)
-			INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.estado<>'Baneado'
-			INNER JOIN pais ON pais.codigo3=usuario.pais
-			INNER JOIN ciudad ON ciudad.id=usuario.ciudad
-			WHERE terminado = 0 and articulo.estado<>'Baneado'
-			$extra";
-			
-			$res = $this->db->query ( "CREATE  TABLE $nameBD(
-					cantidad int(10) NOT NULL,
-					id int(10) unsigned not null,
+				$ors = array_merge ( array (), $criterio );
+				if (count ( $ors ) > 0) {
+					$extra .= "and (";
+					if (count ( $ors ) > 0) {
+						$extra .= "(";
+						$tors = array ();
+						foreach ( $ors as $o ) {
+							$tors [] = "titulo like '%" . str_replace ( "'", "\\'", $o ) . "%'";
+						}
+						$extra .= implode ( " and ", $tors );
+						$extra .= ")";
+					}
+					$extra .= ")";
+				}
+				if ($tipo) {
+					if ($tipo !== "Fijo") {
+						$extra .= " and articulo.tipo='$tipo'";
+					} else {
+						$extra .= " and (articulo.tipo='$tipo' or articulo.tipo='Cantidad')";
+					}
+				}
+				if ($usuario) {
+					$extra .= " and usuario.id='$usuario'";
+				}
+				if ($categoria) {
+					$this->load->model ( "categoria_model", "categoria_model" );
+					$ids = $this->categoria_model->darArbolHijos ( $categoria );
+					if ($ids && is_array ( $ids ) && count ( $ids ) > 0) {
+						$extra .= " and categoria in(" . implode ( ",", $ids ) . ")";
+					}
+				}
+				$query = "SELECT articulo.cantidad,articulo.id,articulo.titulo,articulo.tipo,$precio ,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto, pais.nombre as pais_nombre, ciudad.nombre as ciudad_nombre, articulo.categoria as categoria $adicionalSelect
+                  FROM (articulo)
+                  INNER JOIN usuario ON usuario.id=articulo.usuario and usuario.estado<>'Baneado'
+                  INNER JOIN pais ON pais.codigo3=usuario.pais
+                  INNER JOIN ciudad ON ciudad.id=usuario.ciudad
+                  WHERE terminado = 0 and articulo.estado<>'Baneado'
+                   $extra
+                   $orderby";
+				
+				$res = $this->db->query ( "CREATE temporary TABLE $nameBD(
+					cantidad  int(10) NOT NULL,
+					id  int(10) unsigned not null,
 					titulo varchar(120) not null,
 					tipo enum('Fijo', 'Subasta', 'Cantidad') not null,
-					precio decimal(10,2) unsigned not null,
+					precio  decimal(10,2) unsigned not null,
 					fecha_registro datetime not null,
-					duracion int(10) unsigned NULL,
-					usuario int(10) unsigned not null,
+					duracion  int(10) unsigned NULL,
+					usuario  int(10) unsigned not null,
 					foto text not null,
-					pais_nombre char(52) not null,
-					ciudad_nombre char(35) not null,
+					pais_nombre char(52) not null, 
+					ciudad_nombre char(35) not null, 
 					categoria int(11) not null,
-					codigo3 varchar(3) null,
-					continente varchar(50) null,
 					$adicionaCreate
 					PRIMARY KEY (`id`),
 					UNIQUE KEY `id` (`id`)
-					) CHARSET=utf8 COLLATE=utf8_general_ci;" );
-			
-			$res = $this->db->query ( "insert into $nameBD(cantidad,id,titulo,tipo,precio,fecha_registro,duracion,usuario,foto,pais_nombre,ciudad_nombre,categoria,codigo3,continente $adicionaInsert)($query);" );
+			) CHARSET=utf8 COLLATE=utf8_general_ci;" );
+				
+				$res = $this->db->query ( "insert into $nameBD(cantidad,id,titulo,tipo,precio,fecha_registro,duracion,usuario,foto,pais_nombre,ciudad_nombre,categoria $adicionaInsert)($query);" );
+			}
+			$query = "select * from $nameBD";
+			return $query;
 		}
-		return $nameBD;
+		return false;
 	}
-	
 	// mas fecha menos relevancia
 	public function listarArticulosXCriterioFecha($criterio = false, $tipo = false, $orden = false, $ubicacion = false, $categoria = false, $idioma = false, $usuario = false, $inicio = 0, $total = 10) {
-		$tiempo = time ();
 		$query = $this->prepararConsultaArticuloXCriterioFecha ( $criterio, $tipo, $orden, $ubicacion, $categoria, $idioma, $usuario );
-		$lquery = "$query limit $inicio," . $total;
+		$lquery = "$query limit $inicio," . ($inicio + $total);
 		$cquery = "select count(id) as total from ($query) as x;";
 		$res = $this->db->query ( $lquery );
 		if (is_object ( $res )) {
@@ -3357,19 +3312,19 @@ class Articulo_model extends CI_Model {
 	}
 	public function leerMensajes($usuario, $pagina = 1) {
 		$sql = "select m.*,ue.seudonimo emisor_seudonimo,ue.imagen,ur.seudonimo receptor_seudonimo,ur.imagen
-		from mensaje m
-		inner join usuario ur on ur.id=m.receptor
-		inner join usuario ue on ue.id=m.emisor
-		where  m.id in (
-		select id from mensaje
-		where receptor='$usuario'
-		group by  emisor
-		order by fecha desc)
-		or m.id in (
-		select id from mensaje
-		where emisor='$usuario'
-		group by receptor
-		order by fecha desc)";
+                        from mensaje m
+                        inner join usuario ur on ur.id=m.receptor
+                        inner join usuario ue on ue.id=m.emisor
+                        where  m.id in (
+                              select id from mensaje
+                              where receptor='$usuario'
+                              group by  emisor
+                              order by fecha desc)
+                        or m.id in (
+                              select id from mensaje
+                              where emisor='$usuario'
+                              group by receptor
+                              order by fecha desc)";
 		// var_dump($sql);
 		return array ();
 	}
@@ -3508,9 +3463,9 @@ class Articulo_model extends CI_Model {
 			}
 			
 			$query = "SELECT articulo.terminado, articulo.cantidad,siguiendo.id as idseguimiento, siguiendo.usuario as usuarioseguimiento,articulo.id,articulo.titulo,articulo.tipo,$precio ,articulo.fecha_registro,articulo.duracion,articulo.usuario,articulo.foto, articulo.categoria as categoria $adicionalSelect
-			FROM (articulo,siguiendo)
-			WHERE articulo.id=siguiendo.articulo and siguiendo.usuario=$usuario
-			$orderby $listado ";
+                  FROM (articulo,siguiendo)
+                  WHERE articulo.id=siguiendo.articulo and siguiendo.usuario=$usuario
+                   $orderby $listado ";
 			return $query;
 		}
 		return false;
@@ -3788,12 +3743,6 @@ class Articulo_model extends CI_Model {
 		// $data2['id'] = $sum;
 		// print_r($data2);
 		return $data2;
-	}
-	public function resetTemporal() {
-		$this->db->query ( "drop table tmp_busqueda" );
-	}
-	public function llenarTemporal() {
-		$this->crearTemporal ();
 	}
 }
 ?>

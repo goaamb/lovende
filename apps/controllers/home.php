@@ -365,8 +365,6 @@ class Home extends BaseController {
 				$r ++;
 			} while ( trim ( $celda ) !== "" );
 			if ($count > 0) {
-				$this->articulo->resetTemporal ();
-				$this->articulo->llenarTemporal ();
 				$data ["Mensaje"] = "Se importaron $count Artículos";
 			} else {
 				$data ["Error"] = "No se importo ningun Artículo";
@@ -757,8 +755,7 @@ class Home extends BaseController {
 		if ($usuario) {
 			$x = $this->articulo->darDatosCuentas ( $mes, $anio, $usuario );
 			if ($x) {
-				
-				$this->db->insert ( "factura", array (
+				if(!$this->db->insert ( "factura", array (
 						"codigo" => $x->codigo,
 						"mes" => $x->mes,
 						"usuario" => $x->usuario,
@@ -769,7 +766,9 @@ class Home extends BaseController {
 						"monto_tarifa" => $x->monto_tarifa,
 						"iva" => $x->iva,
 						"tipo_tarifa" => $usuario->tipo_tarifa 
-				) );
+				) )){
+					print $this->db->_error_message()."<br/>";
+				};
 				
 				print "se creo con exito la factura del $mes-$anio y usuario: $usuario->id-$usuario->seudonimo<br/>";
 			} else {
@@ -1091,8 +1090,8 @@ class Home extends BaseController {
 			$action = array_shift ( $uri );
 			$pagina = intval ( $this->input->get ( "pagina" ) );
 			$pagina = $pagina >= 1 ? $pagina : 1;
-			if (isset ( $_GET ["lang"] )) {
-				unset ( $_GET ["lang"] );
+			if(isset($_GET["lang"])){
+				unset($_GET["lang"]);
 			}
 			if ($uri || $section || $action || count ( $_GET ) > 0) {
 				$data = array_merge ( $this->articulo->leerArticulos ( $pagina, $this->input->get ( "criterio" ), $action, $this->input->get ( "orden" ), $this->input->get ( "ubicacion" ), $this->input->get ( "categoria" ), $this->idioma->language->id ), array (

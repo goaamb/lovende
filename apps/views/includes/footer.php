@@ -3,9 +3,7 @@
 	<div class="col">
 		<h3>Información</h3>
 		<ul>
-			<li><a href="fees" title="<?=traducir("Ver tarifas de vendedor");?>"><?=traducir("Tarifas");?></a></li>
-			<li><a href="terms" title="<?=traducir("Ver términos de uso");?>"><?=traducir("Términos de uso");?></li>
-			<li><a href="privacy" title="<?=traducir("Ver privacidad");?>"><?=traducir("Privacidad");?></a></li>
+
 			<li><a href="home/modal/enviar-mail/mail/4" class="nmodal"
 				title="<?=traducir("Contacta con nosotros");?>"><?=traducir("Contacta");?></a></li>
 		</ul>
@@ -31,7 +29,7 @@
 		</ul>
 	</div>
 	<div class="col">
-		<h3><?=traducir("Contacte");?></h3>
+		<h3><?=traducir("Síguenos");?></h3>
 		<ul>
 			<li><a href="http://www.facebook.com/pages/Lovende/471203802892372"
 				title="Página en facebook">Facebook</a></li>

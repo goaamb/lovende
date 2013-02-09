@@ -157,6 +157,7 @@ google_ad_height = 90;
 				<div class="blueBt">
 					<a
 						href="<?=(isset($usuario) && $usuario && $usuario->estado==="Incompleto"?"home/modal/informacion-compra-venta":"product/nuevo");?>"
+						class="<?=(isset($usuario) && $usuario && $usuario->estado==="Incompleto"?"nmodal":"");?>"
 						title="<?=traducir("vende gratis")?>"><?=traducir("Poner en venta gratis")?></a>
 				</div>
 				<!--blueBt-->

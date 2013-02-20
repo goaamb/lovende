@@ -262,7 +262,7 @@ header.header-new {display: block;}
 header.header-new .topNav {font-size: 13px; text-align: right; color: #000; margin: 10px 0;}
 header.header-new .topNav a {color:#005889; border-right: 1px solid #000; padding: 0 7px;}
 header.header-new .topNav a.last {padding-right: 0; border-right: none;}
-header.header-new .redBox {width: 762px; height: 32px; padding: 16px 20px; float: left; background-color: #cb000d; border-radius:5px;}
+header.header-new .redBox {width: 762px; height: 32px; padding: 16px 20px; float: left; background-color: #cb000d; border-radius:3px;}
 header.header-new .blueBt {width: 218px; float: right;}
 header.header-new .blueBt a {width: 218px; height: 64px; line-height: 64px; text-align: center; display: block; background: url(../images/css/bg-header-blue-bt.png) 0 0 no-repeat; color:#fff; font-weight: bold; font-size: 16px; text-shadow: 0px -1px 0px navy;}
 header.header-new .redBox h1 a {background: url(../images/css/logo-lovende-new.png) 0 0 no-repeat; display: block; text-indent: -99999px; width: 96px; height: 20px; float: left; margin: 5px 20px 0 0;}
@@ -275,13 +275,13 @@ header.header-new .topNav a.active {border: 1px solid #cb000d; border-bottom: no
 #miperfil-desplegable-new {background-color:#fff; border: 1px solid #cb000d; padding: 0 10px 5px; position: absolute; font-size: 13px; z-index: 1000; display: none;}
 #miperfil-desplegable-new li {margin: 5px 0;}
 
-footer.footer-new {background-color: #cb000d; border-radius:5px; display: block; padding: 20px 10px 10px; width: 1004px; color:#fff; font-size: 13px;}
+footer.footer-new {background-color: #cb000d; border-radius:3px; display: block; padding: 20px 10px 10px; width: 1004px; color:#fff; font-size: 13px;}
 footer.footer-new .col {float: left; width: 230px; margin: 0 10px;}
 footer.footer-new .col h3 {font-size: 15px; font-weight: bold; margin-bottom: 10px;}
 footer.footer-new .col li {margin-bottom: 10px;}
 footer.footer-new .col li a {color: #fff;}
 
-.categoriesBox {border:1px solid #ccc; border-radius: 5px; font-size: 15px; width: 705px; height: 347px;}
+.categoriesBox {border:1px solid #ccc; border-radius: 3px; font-size: 15px; width: 705px; height: 347px;}
 .categoriesBox .cab {border-bottom:1px solid #ccc; background-color: #f1f1f1; padding: 10px 20px;}
 .categoriesBox .cab h2 {font-size: 22px;}
 .categoriesBox .cab h2 a {font-size: 15px; margin-left: 5px;}
@@ -289,16 +289,17 @@ footer.footer-new .col li a {color: #fff;}
 .categoriesBox .cont .col {width: 32%; margin: 0 1% 0 0; float: left;}
 .categoriesBox .cont .col li {margin-bottom: 5px;}
 
-.siguenos300 {border:1px solid #ccc; border-width: 1px 1px 2px; border-radius: 5px; font-size: 13px; background:#f1f1f1 url(../images/css/degradado.png) 0 0 repeat-x; margin-bottom: 18px; padding: 12px 20px; height: 98px;}
+.siguenos300 {border:1px solid #ccc; border-width: 1px 1px 2px; border-radius: 3px; font-size: 13px; background:#f1f1f1 url(../images/css/degradado.png) 0 0 repeat-x; margin-bottom: 18px; padding: 12px 20px; height: 98px;}
 .siguenos300 h2 {font-size: 22px; margin-bottom: 2px;}
 .siguenos300 .fb {display: block; margin: 15px 0 5px;}
 .bannerIpad a {background:url(../images/css/banner-ipad.png) 0 0 no-repeat; display: block; width: 110px; height: 136px; padding: 70px 100px 0 90px; color:#fff; font-size: 14px;}
 
 /*	carruselHome ------------------ */
-.carruselHome {border:1px solid #ccc; border-radius: 5px; padding: 10px 20px 17px; margin: 15px 0 0;}
+.carruselHome {border:1px solid #ccc; border-radius: 3px; padding: 10px 20px 17px; margin: 15px 0 0;}
 .carruselHome h3 {font-size: 16px; margin-bottom: 22px}
 .carruselHome .jcarousel-clip { overflow: hidden; width: 900px; margin-left: 45px;}
 #carruselHome li div.image {width: 150px; height: 95px; margin-bottom: 10px;}
+#carruselHome li div.image a {display: block;}
 #carruselHome li div.image img {max-width: 150px; max-height: 95px;}
 #carruselHome li {font-size: 13px; width: 150px; margin: 0 15px;}
 #carruselHome li .price {font-size: 16px; font-weight: bold; margin-top: 5px;}
@@ -312,3 +313,49 @@ footer.footer-new .col li a {color: #fff;}
 .jcarousel-prev-disabled-horizontal:hover,
 .jcarousel-prev-disabled-horizontal:focus,
 .jcarousel-prev-disabled-horizontal:active { cursor: default; opacity: .6;}
+
+/* feb'13 --- */
+
+/* article --- */
+article {font-size: 13px; margin-bottom: 35px;}
+article header h3 {font-size: 18px; font-weight: bold; margin-bottom: 15px;}
+article p {margin-bottom: 13px;}
+article h4 {margin-bottom: 3px; font-weight: bold; font-size: 13px;}
+
+/* formas de pago y newsletter --- */
+.formasDePagoBox {float: right; width: 325px;}
+.formasDePagoBox h3, .newsletterBox h3 {font-weight: bold; font-size: 13px; margin-bottom: 10px; border-bottom: 1px solid #ccc;}
+.newsletterBox {float: left; font-size: 13px; width: 650px;}
+.newsletterBox .formBox {float: left; width: 310px; margin-right: 20px;}
+.newsletterBox .textBox {float: left; width: 310px;}
+.newsletterBox h4 {font-weight: bold; margin-bottom: 5px;}
+.newsletterBox button {text-transform: uppercase; width: 150px; padding: 5px 0; line-height: 20px; cursor: pointer;}
+.newsletterBox input[type="text"] {width: 292px; padding: 2px 2px;}
+.newsletterBox p {margin-bottom: 7px; line-height: 18px;}
+
+/* quickImageLinks --- */
+.quickImageLinks {border:1px solid #ccc; border-radius: 3px; padding: 10px 20px 5px 17px; margin: 15px 0 0;}
+.quickImageLinks ul {overflow: hidden; height: 1%;}
+.quickImageLinks ul li {float: left; width: 86px; height: 135px; margin: 0 6px; font-size: 13px; text-align: center;}
+
+/* testimoniosHome --- */
+.testimoniosHome {border:1px solid #ccc; border-radius: 3px; padding: 0; margin: 0 21px 0 0; width: 450px; float: left; font-size: 15px; position: relative; height: 265px;}
+.testimoniosHome .images {float: left; width: 145px;}
+.testimoniosHome .images img {display: block;}
+.testimoniosHome .cont {float: right; width: 270px; padding: 20px 10px 0;}
+.testimoniosHome .cont .cab {background: url(../images/css/linea.png) bottom center no-repeat; margin-bottom: 18px; padding-bottom: 18px; text-align: center; color:#333;}
+.testimoniosHome .cont .cab h3 {font-size: 22px; margin-bottom: 5px;  color: #000;}
+.testimoniosHome .cont .testimonio {margin-bottom: 18px;}
+.testimoniosHome .cont .testimonio em {font-style: italic;}
+.testimoniosHome .cont .testimonio .who {font-style: italic; color: #666;}
+.testimoniosHome .readMore, .noLoTires .readMore, .bannerVendedor .readMore {position: absolute; bottom: 10px; right: 10px;}
+
+/* noLoTires --- */
+.noLoTires {border:1px solid #ccc; border-width: 1px 1px 2px; border-radius: 3px; padding: 0 5px; width: 220px; float: left; font-size: 15px; position: relative; background: url(../images/css/degradadofotos.png) bottom left repeat-x; height: 265px;}
+.noLoTires .cab {text-align: center; margin-bottom: 20px; padding: 20px 0 0; color:#333;}
+.noLoTires .cab h3 {font-size: 22px; color: #000; margin-bottom: 7px;}
+
+/* bannerVendedor --- */
+.bannerVendedor {background: url(../images/css/bg-bannervendedor.png) 0 0 no-repeat; float: right; width: 299px; height: 269px; font-size: 15px; position: relative; }
+.bannerVendedor .cab {text-align: center; font-size: 15px; color:#333; padding: 40px 15px 10px 75px;}
+.bannerVendedor .cab h3 {font-size: 22px; margin-bottom: 10px; color: #000; font-weight: bold;}

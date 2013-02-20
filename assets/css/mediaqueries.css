@@ -21,4 +21,14 @@ and (max-width : 1024px) {
 	header.header-new .redBox {width: 698px;}
 	header.header-new .blueBt {width: 218px;}
 	.categoriesBox {width: 641px;}
+	/*feb 13 */
+	.formasDePagoBox {width: 315px;}
+	.newsletterBox {width: 625px;}
+	.newsletterBox .formBox {width: 300px;}
+	.newsletterBox .textBox {width: 300px;}
+	.newsletterBox button {width: 148px;}
+	.quickImageLinks ul li {width: 80px;}
+	.testimoniosHome {width: 430px; margin-right: 15px;}
+	.testimoniosHome .cont {width: 250px;}
+	.noLoTires {width: 190px;}
 }

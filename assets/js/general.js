@@ -134,6 +134,13 @@ $(function() {
 		$('.showMiperfil-new').removeClass('active');
 		$(this).hide();
 	});
+	
+	/* feb'13 carrusel subrayado --- */
+	$('ul#carruselHome li .image').hover(function(){
+		$(this).siblings('h4').find('a').css({'text-decoration': 'underline'});
+	}, function(){
+		$(this).siblings('h4').find('a').css({'text-decoration': 'none'});
+	});
 
 });
 
